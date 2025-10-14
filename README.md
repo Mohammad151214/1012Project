@@ -4,11 +4,11 @@ Project for EECS 1012.
 # Task1
 ## To do + Futher Reading
 --------------------------
--> Clamp Function
--> Media Queries 
--> dvh, vw etc
--> Adjustable font size
--> Flex
--> Logo
--> Resizing all structures using media queries
--> Responsiveness
+-> Clamp Function<br>
+-> Media Queries<br>
+-> dvh, vw etc<br>
+-> Adjustable font size<br>
+-> Flex<br>
+-> Logo<br>
+-> Resizing all structures using media queries<br>
+-> Responsiveness<br>

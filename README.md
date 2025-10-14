@@ -11,3 +11,4 @@ Adjustable font size
 Flex
 Logo
 Resizing all structures using media queries
+Responsiveness

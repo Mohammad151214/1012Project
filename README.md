@@ -12,3 +12,4 @@ Project for EECS 1012.
 -> Logo<br>
 -> Resizing all structures using media queries<br>
 -> Responsiveness<br>
+-> Login and register are not properly scaled for browser, best viewing when browser half screen width

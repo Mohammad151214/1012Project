@@ -12,4 +12,9 @@ Project for EECS 1012.
 -> Logo<br>
 -> Resizing all structures using media queries<br>
 -> Responsiveness<br>
--> Login and register are not properly scaled for browser, best viewing when browser half screen width
+-> Login and register are not properly scaled for browser, best viewing when browser half screen width<br>
+-> Adding comments<br>
+-> Read through project instructions carefully<br>
+-> Making note of process & use of AI<br>
+-> Sidebar video https://youtu.be/uy1tgKOnPB0<br>
+-> Icons font awesome

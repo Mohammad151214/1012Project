@@ -17,4 +17,5 @@ Project for EECS 1012.
 -> Read through project instructions carefully<br>
 -> Making note of process & use of AI<br>
 -> Sidebar video https://youtu.be/uy1tgKOnPB0<br>
--> Icons font awesome
+-> Icons font awesome<br>
+-> Sidebar should automatically adjust based on screen size, maybe become vertical on phone

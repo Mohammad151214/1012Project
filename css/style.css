@@ -12,11 +12,16 @@
 
 body {
   margin: 0;
-  position: fixed;
   width: 100dvw;
   height: 100dvh;
   display: flex;
+  overflow: hidden;
+  background-color: #f4f5fa;
 }
+
+/* ===================== */
+/*       SIDEBAR         */
+/* ===================== */
 
 .sidebar {
   position: fixed;
@@ -26,25 +31,31 @@ body {
   width: 80px;
   background-color: rgb(1, 10, 48);
   padding: 0.4rem 0.8rem;
-  transition: all 0.5s ease;
+  transition:
+    width 0.4s ease,
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 
-.sidebar.active ~ .main-content {
-  left: 260px;
-  width: calc(100% - 250px);
+/* Content fade-in timing */
+.sidebar .top .logo,
+.sidebar p,
+.sidebar .nav-item {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s;
 }
 
-.sidebar.active {
-  width: 250px;
+.sidebar.active .top .logo,
+.sidebar.active p,
+.sidebar.active .nav-item {
+  opacity: 1;
 }
 
-.user-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  border: 1px solid #fff;
-}
-
+/* Toggle button */
 .sidebar #menubtn {
   position: absolute;
   color: antiquewhite;
@@ -54,12 +65,20 @@ body {
   line-height: 50px;
   transform: translateX(-50%);
   cursor: pointer;
+  transition: left 0.4s ease, transform 0.3s ease;
 }
 
 .sidebar.active #menubtn {
   left: 85%;
+  transform: rotate(180deg);
 }
 
+/* Sidebar expanded state */
+.sidebar.active {
+  width: 250px;
+}
+
+/* Logo */
 .sidebar .top .logo {
   color: #fff;
   display: flex;
@@ -67,11 +86,6 @@ body {
   width: 100%;
   align-items: center;
   pointer-events: none;
-  opacity: 0;
-}
-
-.sidebar.active .top .logo {
-  opacity: 1;
 }
 
 .top .logo i {
@@ -79,10 +93,18 @@ body {
   margin-right: 5px;
 }
 
+/* User section */
 .user {
   display: flex;
   align-items: center;
   margin: 1rem 0;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1px solid #fff;
 }
 
 .user p {
@@ -95,21 +117,13 @@ body {
   font-weight: 600;
 }
 
-.sidebar p {
-  opacity: 0;
-}
-
-.sidebar.active p {
-  opacity: 1;
-}
-
-i {
-  color: #fff;
-}
+/* ===================== */
+/*     NAVIGATION        */
+/* ===================== */
 
 .sidebar ul li {
   position: relative;
-  list-style-type: none;
+  list-style: none;
   height: 50px;
   width: 90%;
   margin: 0.8rem auto;
@@ -122,6 +136,7 @@ i {
   align-items: center;
   text-decoration: none;
   border-radius: 0.8rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar ul li a:hover {
@@ -135,27 +150,31 @@ i {
   height: 50px;
   border-radius: 12px;
   line-height: 50px;
+  transition: text-shadow 0.3s ease;
 }
 
-.sidebar .nav-item {
-  opacity: 0;
+.sidebar ul li a:hover i {
+  text-shadow: 0 0 8px #00ffff;
 }
 
-.sidebar.active .nav-item {
-  opacity: 1;
-}
+/* ===================== */
+/*       TOOLTIP         */
+/* ===================== */
 
 .sidebar ul li .tooltip {
   position: absolute;
   left: 125px;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -60%);
   box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
   border-radius: 0.6rem;
   padding: 0.4rem 1.2rem;
   line-height: 1.8rem;
   z-index: 20;
   opacity: 0;
+  background-color: #222;
+  color: white;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .sidebar.active ul li .tooltip {
@@ -164,13 +183,83 @@ i {
 
 .sidebar ul li:hover .tooltip {
   opacity: 1;
+  transform: translate(-50%, -50%);
 }
+
+/* ===================== */
+/*     MAIN CONTENT      */
+/* ===================== */
 
 .main-content {
   position: relative;
   min-height: 100dvh;
   top: 10px;
   left: 90px;
-  transition: all 0.5s ease;
   width: calc(100% - 80px);
+  transition:
+    left 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar.active ~ .main-content {
+  left: 260px;
+  width: calc(100% - 260px);
+}
+
+/* ===================== */
+/*     RESPONSIVE MODE   */
+/* ===================== */
+
+@media (max-width: 768px) {
+  /* Sidebar slides in/out instead of expanding */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 250px;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* Blurred overlay on background when sidebar open */
+  .main-content::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    z-index: 999;
+  }
+
+  .sidebar.active ~ .main-content::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Reset content positioning */
+  .main-content {
+    left: 0;
+    width: 100%;
+  }
+
+  .sidebar.active ~ .main-content {
+    left: 0;
+    width: 100%;
+  }
+
+  /* Adjust toggle button placement */
+  .sidebar #menubtn {
+    left: 100%;
+    top: 1rem;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active #menubtn {
+    left: 100%;
+    transform: translateX(-100%) rotate(180deg);
+  }
 }

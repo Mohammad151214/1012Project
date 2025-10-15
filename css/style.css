@@ -1,265 +1,232 @@
+/* ---------- Fonts & base ---------- */
 @font-face {
   font-family: Aptos;
   src: url(../fonts/Aptos.ttf);
 }
 
+:root {
+  --sidebar-collapsed: 80px;
+  --sidebar-expanded: 250px;
+  --sidebar-bg: rgb(1, 10, 48);
+  --transition-fast: 0.25s;
+  --transition-med: 0.4s;
+}
+
 * {
   font-family: Aptos, Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
-  margin: 0;
-  width: 100dvw;
-  height: 100dvh;
-  display: flex;
+  min-height: 100vh;
+  background: #f4f5fa;
   overflow: hidden;
-  background-color: #f4f5fa;
+  display: flex;
 }
 
-/* ===================== */
-/*       SIDEBAR         */
-/* ===================== */
-
+/* ---------- Sidebar base ---------- */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100dvh;
-  width: 80px;
-  background-color: rgb(1, 10, 48);
-  padding: 0.4rem 0.8rem;
-  transition:
-    width 0.4s ease,
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow-x: hidden;
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: var(--sidebar-collapsed);
+  background: var(--sidebar-bg);
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition-med) ease, background-color var(--transition-med) ease;
+  box-shadow: 4px 0 18px rgba(0, 0, 0, 0.2);
   z-index: 1000;
 }
 
-/* Content fade-in timing */
-.sidebar .top .logo,
-.sidebar p,
-.sidebar .nav-item {
-  opacity: 0;
-  transition: opacity 0.3s ease 0.2s;
+.sidebar.active {
+  width: var(--sidebar-expanded);
 }
 
-.sidebar.active .top .logo,
-.sidebar.active p,
-.sidebar.active .nav-item {
-  opacity: 1;
-}
-
-/* Toggle button */
-.sidebar #menubtn {
+/* ---------- Toggle button ---------- */
+#menubtn {
   position: absolute;
-  color: antiquewhite;
-  top: 0.4rem;
+  top: 0.6rem;
   left: 50%;
-  font-size: 1.2rem;
-  line-height: 50px;
   transform: translateX(-50%);
+  color: antiquewhite;
+  font-size: 1.2rem;
+  line-height: 48px;
   cursor: pointer;
-  transition: left 0.4s ease, transform 0.3s ease;
+  transition: transform var(--transition-fast) ease, left var(--transition-med) ease;
+  z-index: 1100;
 }
 
 .sidebar.active #menubtn {
   left: 85%;
-  transform: rotate(180deg);
+  transform: translateX(-50%) rotate(180deg);
 }
 
-/* Sidebar expanded state */
-.sidebar.active {
-  width: 250px;
-}
-
-/* Logo */
-.sidebar .top .logo {
-  color: #fff;
+/* ---------- Logo ---------- */
+.top .logo {
   display: flex;
-  height: 50px;
-  width: 100%;
   align-items: center;
+  gap: 0.5rem;
+  height: 50px;
+  color: #fff;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast) ease var(--transition-fast);
 }
 
-.top .logo i {
-  font-size: 2rem;
-  margin-right: 5px;
+.sidebar.active .top .logo {
+  opacity: 1;
 }
 
-/* User section */
+/* ---------- User ---------- */
 .user {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  gap: 0.9rem;
+  margin: 0.6rem 0;
 }
 
 .user-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  border: 1px solid #fff;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .user p {
   color: #fff;
+  opacity: 0;
+  transition: opacity var(--transition-fast) ease var(--transition-fast);
+  white-space: nowrap;
+}
+
+.sidebar.active .user p {
   opacity: 1;
-  margin-left: 1rem;
 }
 
-.bold {
-  font-weight: 600;
+/* ---------- Nav ---------- */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.6rem;
 }
-
-/* ===================== */
-/*     NAVIGATION        */
-/* ===================== */
 
 .sidebar ul li {
   position: relative;
-  list-style: none;
-  height: 50px;
-  width: 90%;
-  margin: 0.8rem auto;
-  line-height: 50px;
+  margin: 0.4rem 0;
 }
 
 .sidebar ul li a {
-  color: #fff;
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+  padding: 0 0.4rem;
+  height: 48px;
+  border-radius: 10px;
+  color: #fff;
   text-decoration: none;
-  border-radius: 0.8rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .sidebar ul li a:hover {
-  background-color: black;
-  color: #8a8686;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  color: #ddd;
 }
 
 .sidebar ul li a i {
-  min-width: 50px;
+  min-width: 48px;
   text-align: center;
-  height: 50px;
-  border-radius: 12px;
-  line-height: 50px;
-  transition: text-shadow 0.3s ease;
+  font-size: 1.2rem;
+  transition: text-shadow var(--transition-fast);
 }
 
 .sidebar ul li a:hover i {
-  text-shadow: 0 0 8px #00ffff;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
 }
 
-/* ===================== */
-/*       TOOLTIP         */
-/* ===================== */
+.nav-item {
+  opacity: 0;
+  transition: opacity var(--transition-fast) ease var(--transition-fast);
+  white-space: nowrap;
+}
 
+.sidebar.active .nav-item {
+  opacity: 1;
+}
+
+/* ---------- Tooltip ---------- */
 .sidebar ul li .tooltip {
   position: absolute;
-  left: 125px;
+  left: calc(var(--sidebar-collapsed) + 10px);
   top: 50%;
-  transform: translate(-50%, -60%);
-  box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-  border-radius: 0.6rem;
-  padding: 0.4rem 1.2rem;
-  line-height: 1.8rem;
-  z-index: 20;
+  transform: translateY(-50%);
+  background: #111;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   opacity: 0;
-  background-color: #222;
-  color: white;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  z-index: 999;
+}
+
+.sidebar:not(.active) ul li:hover .tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(6px);
 }
 
 .sidebar.active ul li .tooltip {
   display: none;
 }
 
-.sidebar ul li:hover .tooltip {
-  opacity: 1;
-  transform: translate(-50%, -50%);
-}
-
-/* ===================== */
-/*     MAIN CONTENT      */
-/* ===================== */
-
+/* ---------- Main Content ---------- */
 .main-content {
   position: relative;
-  min-height: 100dvh;
-  top: 10px;
-  left: 90px;
-  width: calc(100% - 80px);
-  transition:
-    left 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  min-height: 100vh;
+  margin-left: var(--sidebar-collapsed);
+  padding: 1rem;
+  background-color: #f4f4f4;
+  transition: margin-left var(--transition-med) ease;
+  overflow-y: auto;
 }
 
 .sidebar.active ~ .main-content {
-  left: 260px;
-  width: calc(100% - 260px);
+  margin-left: var(--sidebar-expanded);
 }
 
-/* ===================== */
-/*     RESPONSIVE MODE   */
-/* ===================== */
-
+/* ---------- Responsiveness ---------- */
 @media (max-width: 768px) {
-  /* Sidebar slides in/out instead of expanding */
+  /* Keep collapsed sidebar always visible */
   .sidebar {
-    transform: translateX(-100%);
-    width: 250px;
+    width: var(--sidebar-collapsed);
   }
 
   .sidebar.active {
-    transform: translateX(0);
+    width: var(--sidebar-expanded);
   }
 
-  /* Blurred overlay on background when sidebar open */
-  .main-content::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    background-color: rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
-    z-index: 999;
-  }
-
-  .sidebar.active ~ .main-content::before {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Reset content positioning */
   .main-content {
-    left: 0;
-    width: 100%;
+    margin-left: var(--sidebar-collapsed);
   }
 
   .sidebar.active ~ .main-content {
-    left: 0;
-    width: 100%;
+    margin-left: var(--sidebar-expanded);
   }
 
-  /* Adjust toggle button placement */
-  .sidebar #menubtn {
-    left: 100%;
-    top: 1rem;
-    transform: translateX(-100%);
-  }
-
-  .sidebar.active #menubtn {
-    left: 100%;
-    transform: translateX(-100%) rotate(180deg);
+  /* Tooltip reposition slightly for narrow view */
+  .sidebar ul li .tooltip {
+    left: calc(var(--sidebar-collapsed) + 6px);
   }
 }

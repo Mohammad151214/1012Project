@@ -1,3 +1,7 @@
+:root {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,7 +18,7 @@ body {
 .overlay {
   width: 100dvw;
   height: 100dvh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,30 +36,134 @@ body {
 }
 
 .heading {
-  font-size: 50px;
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 2rem;
 }
 
 .login {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
+
 .login input {
   width: 80%;
   border-radius: 10px;
-  margin-bottom: 10%;
-  margin-top: 2%;
-  padding: 10px;
+  margin-bottom: 1.8rem;
+  margin-top: 1rem;
+  padding: 0.7rem;
   border: 2px solid black;
 }
 
 input::placeholder {
-  font-size: 20px;
-  /* padding: 50px; */
+  font-size: 1.2rem;
 }
 
 #submit {
-  font-size: 20px;
-  width: 30%;
+  font-size: 1.5rem;
+  width: clamp(120px, 40%, 180px);
   background-color: #0088ff;
   color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#submit:hover {
+  background-color: #006fdd;
+  transform: scale(1.03);
+}
+
+.signup-text {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.signup-text a {
+  color: #0088ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.signup-text a:hover {
+  color: #006fdd;
+  text-decoration: underline;
+}
+
+/* Base font size for desktops and large screens */
+:root {
+  font-size: 16px;
+}
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 15px;
+  }
+
+  .login_container {
+    width: 80%;
+    padding: 1.8rem;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+
+  .heading {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .login input {
+    width: 90%;
+  }
+
+  #submit {
+    width: 60%;
+  }
+}
+
+/* Small phones (≤480px) */
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+
+  .login_container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .login input {
+    font-size: 0.95rem;
+  }
+
+  .signup-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens (≤360px) */
+@media (max-width: 360px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .login_container {
+    width: 95%;
+  }
+
+  #submit {
+    width: 70%;
+    min-width: 100px;
+  }
 }

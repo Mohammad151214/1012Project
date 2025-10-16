@@ -13,13 +13,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
 }
 
 .overlay {
   width: 100dvw;
   min-height: 100dvh;
-  height: auto;
+  padding: 1rem 0;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
@@ -31,10 +30,9 @@ body {
   border-radius: 20px;
   border: solid 2px black;
   text-align: center;
-  max-height: 90dvh;
-  max-width: 450px;
-  overflow-y: auto;
+  max-height: calc(100dvh - 4rem);
   width: 85%;
+  max-width: 35rem;
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -49,10 +47,9 @@ body {
 }
 
 .login input {
-  width: 80%;
+  width: clamp(200px, 80%, 400px);
   border-radius: 10px;
-  margin-bottom: 1.8rem;
-  margin-top: 1rem;
+  margin: clamp(0.5rem, 1vw, 1.8rem) 0;
   padding: 0.7rem;
   border: 2px solid black;
 }
@@ -63,7 +60,9 @@ input::placeholder {
 
 #submit {
   font-size: 1.5rem;
+  margin-top: 2rem;
   width: clamp(120px, 40%, 180px);
+  min-width: 6rem;
   background-color: #0088ff;
   color: white;
   border: none;
@@ -94,7 +93,6 @@ input::placeholder {
 .signup-text a:hover {
   color: #006fdd;
   text-decoration: underline;
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
 /* Responsive breakpoints */

@@ -13,11 +13,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 
 .overlay {
   width: 100dvw;
-  height: 100dvh;
+  min-height: 100dvh;
+  height: auto;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
@@ -29,7 +31,9 @@ body {
   border-radius: 20px;
   border: solid 2px black;
   text-align: center;
-  max-width: 500px;
+  max-height: 90dvh;
+  max-width: 450px;
+  overflow-y: auto;
   width: 85%;
   padding: 2rem;
   box-sizing: border-box;
@@ -76,7 +80,7 @@ input::placeholder {
 
 .signup-text {
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   color: #333;
 }
 
@@ -90,21 +94,19 @@ input::placeholder {
 .signup-text a:hover {
   color: #006fdd;
   text-decoration: underline;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
 }
 
-/* Base font size for desktops and large screens */
-:root {
-  font-size: 16px;
-}
+/* Responsive breakpoints */
 
-/* Medium screens (tablets, small laptops) */
+/* Medium screens (tablets / small laptops) */
 @media (max-width: 1024px) {
   :root {
     font-size: 15px;
   }
-
   .login_container {
     width: 80%;
+    max-width: 26rem; /* 416px */
     padding: 1.8rem;
   }
 }
@@ -114,56 +116,57 @@ input::placeholder {
   :root {
     font-size: 14px;
   }
-
-  .heading {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  .login_container {
+    width: 90%;
+    max-width: 24rem; /* 384px */
+    padding: 1.5rem;
   }
-
   .login input {
     width: 90%;
   }
-
   #submit {
     width: 60%;
   }
 }
 
-/* Small phones (≤480px) */
+/* Small phones */
 @media (max-width: 480px) {
   :root {
     font-size: 13px;
   }
-
   .login_container {
-    width: 90%;
-    padding: 1.5rem;
+    width: 95%;
+    max-width: 21.25rem; /* 340px */
+    padding: 1.2rem;
   }
-
   .heading {
     font-size: 2rem;
   }
-
   .login input {
     font-size: 0.95rem;
   }
-
   .signup-text {
     font-size: 0.9rem;
   }
+  #submit {
+    width: 70%;
+    min-width: 6.25rem; /* 100px */
+  }
 }
 
-/* Extra small screens (≤360px) */
+/* Extra small screens */
 @media (max-width: 360px) {
   :root {
     font-size: 12px;
   }
-
   .login_container {
     width: 95%;
   }
+}
 
-  #submit {
-    width: 70%;
-    min-width: 100px;
+@media (max-height: 700px) {
+  .login input {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
   }
 }

@@ -50,7 +50,7 @@ body {
 
 input::placeholder {
   font-size: 20px;
-  padding: 50px;
+  /* padding: 50px; */
 }
 
 #submit {

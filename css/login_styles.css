@@ -162,9 +162,4 @@ input::placeholder {
   }
 }
 
-@media (max-height: 700px) {
-  .login input {
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-  }
-}
+

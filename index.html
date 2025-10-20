@@ -8,7 +8,7 @@
       src="https://kit.fontawesome.com/c13af7bb57.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
     <div class="sidebar">
@@ -28,7 +28,7 @@
       </div>
       <ul>
         <li>
-          <a href="#">
+          <a href="myProfile.html">
             <i class="fa-regular fa-id-badge"></i>
             <span class="nav-item">Profile</span>
           </a>
@@ -37,11 +37,20 @@
       </ul>
       <ul>
         <li>
-          <a href="#">
+          <a href="index.html">
             <i class="fa-solid fa-bookmark"></i>
             <span class="nav-item">Recipes</span>
           </a>
           <span class="tooltip">Recipes</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="addRecipe.html">
+            <i class="fa-regular fa-square-plus"></i>
+            <span class="nav-item">Add Recipe</span>
+          </a>
+          <span class="tooltip">Add Recipe</span>
         </li>
       </ul>
       <ul>
@@ -59,11 +68,8 @@
       <div class="container">
         <h1>My Recipes</h1>
         <div class="topnav">
-  <a  href="#home">Add recipe</a>
-  <a href="#about">Edit recipe</a>
-  <a href="#contact">Export recipe</a>
-  <input type="text" class="search" placeholder="Search..">
-</div>
+          <input type="text" class="search" placeholder="Search.." />
+        </div>
       </div>
       <div class="recipe-card">
         <div class="recipe-img"></div>
@@ -151,5 +157,5 @@
       </div>
     </div>
   </body>
-  <script src="1012Project/js/script.js"></script>
+  <script src="js/script.js"></script>
 </html>

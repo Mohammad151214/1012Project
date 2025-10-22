@@ -336,9 +336,7 @@ body {
     margin-left: var(--sidebar-collapsed);
     font-size: 14px;
   }
-  .centered {
-  top: 7%;
-}
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -382,21 +380,11 @@ body {
   text-align: justify;
 }
 /* css for myProfile page */
-.profile{
+.profilePage{
   grid-column: 1/span 3;
-
-/* align-self: center; */
 text-align: center;
-  /* border: 3px solid black; */
 }
-/* .centered {
- 
-  position: absolute;
-  top: 8%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-.login{
+.profileSettings{
   position: relative;
   /* align-self: center; */
 align-items: center;
@@ -423,7 +411,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /* Set a style for the submit button */
-.btn {
+.btn1 {
   background-color: #04AA6D;
   color: white;
   padding: 16px 20px;
@@ -446,6 +434,9 @@ input[type=text]:focus, input[type=password]:focus {
  
 }
 
-.btn:hover {
+.btn1:hover {
+  opacity: 1;
+}
+.btn2:hover {
   opacity: 1;
 }

@@ -348,7 +348,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
     font-size: 15px;
   }
-  
+
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -380,14 +381,10 @@ body {
   text-align: justify;
 }
 /* css for myProfile page */
-.profilePage{
-  grid-column: 1/span 3;
-text-align: center;
-}
+
 .profileSettings{
-  position: relative;
+  /* position: relative; */
   /* align-self: center; */
-align-items: center;
 text-align: center;
   margin-left: 13rem;
   /* margin-top: 3rem; */
@@ -423,7 +420,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 .btn2 {
   
-  background-color: red;
+  background-color: rgb(241, 65, 65);
   color: white;
   padding: 16px 20px;
   border: none;
@@ -439,4 +436,41 @@ input[type=text]:focus, input[type=password]:focus {
 }
 .btn2:hover {
   opacity: 1;
+}
+/* --- Profile Picture Section --- */
+
+
+.profile-pic-section img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 3px solid #22b573;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.upload-btn {
+  background-color: #22b573;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: #1a965e;
+}
+
+#uploadImage {
+  display: none;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #ddd;
+  margin: 20px 0;
 }

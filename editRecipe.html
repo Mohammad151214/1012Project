@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Vault</title>
+    <script
+      src="https://kit.fontawesome.com/c13af7bb57.js"
+      crossorigin="anonymous"
+    ></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="top">
+        <div class="logo">
+          <i class="fa-solid fa-user"></i>
+          <span class="title">Recipe Vault</span>
+        </div>
+        <i class="fa-solid fa-bars" id="menubtn"></i>
+      </div>
+      <div class="user">
+        <img src="images/login_bg.jpg" alt="user" class="user-img" />
+        <div>
+          <p class="bold">Username</p>
+          <p>Admin</p>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <a href="myProfile.html">
+            <i class="fa-regular fa-id-badge"></i>
+            <span class="nav-item">Profile</span>
+          </a>
+          <span class="tooltip">Profile</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-bookmark"></i>
+            <span class="nav-item">Recipes</span>
+          </a>
+          <span class="tooltip">Recipes</span>
+        </li>
+      </ul>
+       <ul>
+        <li>
+          <a href="addRecipe.html">
+            <i class="fa-regular fa-square-plus"></i>
+            <span class="nav-item">Add Recipe</span>
+          </a>
+          <span class="tooltip">Add Recipe</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="login.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item">Logout</span>
+          </a>
+          <span class="tooltip">Logout</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      <div class="container">
+        <h1>My Recipes</h1>
+       <div class="topnav">
+          <input type="text" class="search" placeholder="Search.." />
+        </div>
+        </div>
+  
+    <form action="" method="post">
+        <input type="text" id="Recipe_title" name="Recipe_title" placeholder="Recipe title"/>
+        <textarea id="Recipe_box" name="editorContent"  placeholder="Type your recipe..."></textarea><br><br>
+        <input type="submit" value="Save Changes">
+    </form>
+  </div>
+</body>
+ <script src="js/script.js"></script>
+</html>

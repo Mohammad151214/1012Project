@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Vault</title>
+    <script
+      src="https://kit.fontawesome.com/c13af7bb57.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="top">
+        <div class="logo">
+          <i class="fa-solid fa-user"></i>
+          <span class="title">Recipe Vault</span>
+        </div>
+        <i class="fa-solid fa-bars" id="menubtn"></i>
+      </div>
+      <div class="user">
+        <img src="images/login_bg.jpg" alt="user" class="user-img" />
+        <div>
+          <p class="bold">Username</p>
+          <p>Admin</p>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <a href="myProfile.html">
+            <i class="fa-regular fa-id-badge"></i>
+            <span class="nav-item">Profile</span>
+          </a>
+          <span class="tooltip">Profile</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="index.html">
+            <i class="fa-solid fa-bookmark"></i>
+            <span class="nav-item">Recipes</span>
+          </a>
+          <span class="tooltip">Recipes</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="addRecipe.html">
+            <i class="fa-regular fa-square-plus"></i>
+            <span class="nav-item">Add Recipe</span>
+          </a>
+          <span class="tooltip">Add Recipe</span>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a href="login.html">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item">Logout</span>
+          </a>
+          <span class="tooltip">Logout</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="main-content">
+      
+     
+      <div class="profileSettings">
+        <form action="/action_page.php" >
+    <h1>My Profile Settings</h1>
+            <br>
+            <div class="profile-pic-section">
+      <img id="profileImage" src="images/profile_icon.jpg" alt="Profile Picture"/>
+      <input type="file" id="uploadImage" accept="image/*"><br>
+      <label for="uploadImage" class="upload-btn">Change Profile Picture</label>
+    </div>
+        <hr>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+            <br>
+                <button type="submit" class="btn2">Delete Account</button>
+    <button type="submit" class="btn1">Save Changes</button>
+
+  </form>
+  
+      </div>
+    </div>
+  </body>
+  <script src="js/script.js"></script>
+</html>

@@ -9,6 +9,14 @@ const DATA_FILE = path.join(__dirname, '..', 'data', 'users.json');
 // Middleware
 app.use(express.json());
 
+// CORS middleware
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  next();
+});
+
 // Helper function to read data from file
 async function readData() {
   try {
@@ -26,6 +34,8 @@ async function readData() {
 async function writeData(data) {
   await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
 }
+
+// API Routes (define these BEFORE static files)
 
 // GET all users
 app.get('/api/users', async (req, res) => {
@@ -189,14 +199,16 @@ app.post('/api/signup', async (req, res) => {
   }
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Data file: ${DATA_FILE}`);
+// Serve static files (CSS, JS, images, etc.)
+app.use(express.static(path.join(__dirname, '..')));
+
+// Serve login page as default for root path
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'login.html'));
 });
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:3000`);
+  console.log(`Data file: ${DATA_FILE}`);
 });

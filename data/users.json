@@ -19,5 +19,12 @@
     "email": "bob@example.com",
     "password": "securepass",
     "createdAt": "2025-11-20T16:20:00.000Z"
+  },
+  {
+    "id": 4,
+    "name": "Mohammad Abbas",
+    "email": "mosavani67@gmail.com",
+    "password": "yasana01",
+    "createdAt": "2025-11-20T23:01:12.779Z"
   }
 ]

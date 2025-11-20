@@ -7,6 +7,12 @@
     <link rel="stylesheet" type="text/css" href="css/login_styles.css" />
     <script src="js/login.js" defer></script>
     <title>Login</title>
+    <script>
+      // If already logged in, redirect to dashboard
+      if (localStorage.getItem("user")) {
+        window.location.href = "dashboard.html";
+      }
+    </script>
   </head>
   <body>
     <section class="bg-image">
@@ -15,12 +21,25 @@
           <h2 class="heading">Login</h2>
           <form class="login">
             <label for="username">Username</label><br />
-            <input type="email" id="username" name="username" placeholder="Email"/><br />
+            <input
+              type="email"
+              id="username"
+              name="username"
+              placeholder="Email"
+            /><br />
             <label for="pwd">Password</label><br />
-            <input type="password" id="pwd" name="pwd" placeholder="Password"/><br />
-            <input type="submit" id="submit" value="Login">
+            <input
+              type="password"
+              id="pwd"
+              name="pwd"
+              placeholder="Password"
+            /><br />
+            <input type="submit" id="submit" value="Login" />
           </form>
-          <p class="signup-text">Don't have an account? <a href="register.html">Sign Up!</a> It's quick and easy!</p>
+          <p class="signup-text">
+            Don't have an account? <a href="register.html">Sign Up!</a> It's
+            quick and easy!
+          </p>
         </div>
       </div>
     </section>

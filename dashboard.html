@@ -14,7 +14,6 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
     <link rel="stylesheet" type="text/css" href="css/theme.css" />
     <script src="js/script.js" defer></script>
     <script src="js/register.js" defer></script>
@@ -77,7 +76,12 @@
       <div class="container">
         <h1>My Recipes</h1>
         <div class="topnav">
-          <input type="text" class="search" placeholder="Search recipes..." id="searchInput" />
+          <input
+            type="text"
+            class="search"
+            placeholder="Search recipes..."
+            id="searchInput"
+          />
         </div>
       </div>
 
@@ -291,49 +295,6 @@
         localStorage.removeItem("user");
         window.location.href = "login.html";
       }
-
-      // Search functionality
-      document.getElementById('searchInput').addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
-        const recipeCards = document.querySelectorAll('.recipe-card');
-        
-        recipeCards.forEach(card => {
-          const title = card.querySelector('h3').textContent.toLowerCase();
-          const description = card.querySelector('p').textContent.toLowerCase();
-          
-          if (title.includes(searchTerm) || description.includes(searchTerm)) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-
-      // Edit button functionality
-      document.querySelectorAll('.recipe-action-btn.edit').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          window.location.href = 'editRecipe.html';
-        });
-      });
-
-      // Delete button functionality
-      document.querySelectorAll('.recipe-action-btn.delete').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const card = this.closest('.recipe-card');
-          const recipeName = card.querySelector('h3').textContent;
-          
-          if (confirm(`Are you sure you want to delete "${recipeName}"?`)) {
-            card.style.transition = 'all 0.3s ease';
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.8)';
-            setTimeout(() => {
-              card.remove();
-            }, 300);
-          }
-        });
-      });
     </script>
   </body>
 </html>

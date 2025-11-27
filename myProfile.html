@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/profile.css" />
     <link rel="stylesheet" type="text/css" href="css/theme.css" />
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <div class="sidebar">
@@ -36,7 +37,7 @@
       <ul>
         <li>
           <a href="myProfile.html">
-            <i class="fa-regular fa-id-badge"></i>
+            <i class="fa-solid fa-user"></i>
             <span class="nav-item">Profile</span>
           </a>
           <span class="tooltip">Profile</span>
@@ -74,7 +75,7 @@
     <div class="main-content">
       <div class="profileSettings">
         <h1>My Profile Settings</h1>
-        
+
         <div class="profile-card">
           <form id="profileForm">
             <!-- Profile Picture Section -->
@@ -97,7 +98,9 @@
 
             <!-- Email Field -->
             <div class="form-group">
-              <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+              <label for="email"
+                ><i class="fa-solid fa-envelope"></i> Email</label
+              >
               <input
                 type="email"
                 id="email"
@@ -131,86 +134,11 @@
         </div>
       </div>
     </div>
-
-    <script src="js/script.js"></script>
     <script>
-      // Load user data on page load
-      window.addEventListener('DOMContentLoaded', function() {
-        const user = JSON.parse(localStorage.getItem('user') || '{}');
-        if (user.email) {
-          document.getElementById('email').value = user.email;
-        }
-        
-        // Load saved profile image if exists
-        const savedImage = localStorage.getItem('profileImage');
-        if (savedImage) {
-          document.getElementById('profileImage').src = savedImage;
-        }
-      });
-
-      // Handle profile image upload
-      document.getElementById('uploadImage').addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = function(event) {
-            const imageDataUrl = event.target.result;
-            document.getElementById('profileImage').src = imageDataUrl;
-            // Save to localStorage
-            localStorage.setItem('profileImage', imageDataUrl);
-            alert('Profile picture updated successfully!');
-          };
-          reader.readAsDataURL(file);
-        }
-      });
-
-      // Handle form submission
-      document.getElementById('profileForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('psw').value;
-        
-        // Get existing user data
-        let user = JSON.parse(localStorage.getItem('user') || '{}');
-        
-        // Update email
-        user.email = email;
-        
-        // Update password if provided
-        if (password.trim() !== '') {
-          user.password = password;
-        }
-        
-        // Save updated user data
-        localStorage.setItem('user', JSON.stringify(user));
-        
-        alert('Profile updated successfully!');
-        
-        // Clear password field for security
-        document.getElementById('psw').value = '';
-      });
-
-      // Delete account function
-      function deleteAccount() {
-        if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
-          if (confirm('This will permanently delete all your data. Are you absolutely sure?')) {
-            // Clear all user data
-            localStorage.removeItem('user');
-            localStorage.removeItem('profileImage');
-            
-            alert('Account deleted successfully. You will be redirected to the login page.');
-            
-            // Redirect to login
-            window.location.href = 'login.html';
-          }
-        }
-      }
-
       // Logout function
       function logout() {
-        localStorage.removeItem('user');
-        window.location.href = 'login.html';
+        localStorage.removeItem("user");
+        window.location.href = "login.html";
       }
     </script>
   </body>

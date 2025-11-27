@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Vault</title>
+    <title>Recipe Vault - Add Recipe</title>
     <script>
       if (!localStorage.getItem("user")) {
         window.location.href = "login.html";
@@ -14,6 +14,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/addRecipe.css" />
+    <link rel="stylesheet" type="text/css" href="css/theme.css" />
   </head>
   <body>
     <div class="sidebar">
@@ -70,29 +72,144 @@
     </div>
 
     <div class="main-content">
-      <div class="container">
-        <h1>My Recipes</h1>
+      <div class="add-recipe-container">
+        <h1>Add New Recipe</h1>
         <div class="topnav">
-          <input type="text" class="search" placeholder="Search.." />
+          <input type="text" class="search" placeholder="Search recipes..." />
         </div>
-        <div class="RTitle"></div>
-        <form action="" method="post">
-          <input
-            type="text"
-            id="Recipe_title"
-            name="Recipe_title"
-            placeholder="Recipe title"
-          />
-          <textarea
-            id="Recipe_box"
-            name="editorContent"
-            placeholder="Type your recipe..."
-          ></textarea
-          ><br /><br />
-          <input type="submit" value="Save Changes" />
-        </form>
+
+        <div class="recipe-form-card">
+          <form id="addRecipeForm" action="" method="post">
+            <input
+              type="text"
+              id="Recipe_title"
+              name="Recipe_title"
+              placeholder="Recipe Title"
+              required
+            />
+
+            <!-- Image Upload Section -->
+            <div class="image-upload-section">
+              <div class="image-upload-container">
+                <div class="image-preview" id="imagePreview">
+                  <div class="image-preview-placeholder">
+                    <i class="fa-solid fa-camera"></i>
+                    <p>No image selected</p>
+                  </div>
+                  <img id="previewImg" src="" alt="Recipe preview" />
+                </div>
+                <div class="image-upload-controls">
+                  <input type="file" id="Recipe_image" accept="image/*" />
+                  <label for="Recipe_image" class="upload-btn-custom">
+                    <i class="fa-solid fa-upload"></i>
+                    Upload Image
+                  </label>
+                  <button type="button" class="remove-image-btn" id="removeImageBtn">
+                    <i class="fa-solid fa-trash"></i>
+                    Remove Image
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <textarea
+              id="Recipe_box"
+              name="editorContent"
+              placeholder="Type your recipe here...
+
+Instructions, ingredients, cooking time, etc."
+              required
+            ></textarea>
+            <input type="submit" value="Save Recipe" />
+          </form>
+        </div>
       </div>
     </div>
+
+    <script src="js/script.js"></script>
+    <script>
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.href = "login.html";
+      }
+
+      // Image upload preview
+      const imageInput = document.getElementById('Recipe_image');
+      const imagePreview = document.getElementById('imagePreview');
+      const previewImg = document.getElementById('previewImg');
+      const removeImageBtn = document.getElementById('removeImageBtn');
+      let selectedImageData = null;
+
+      imageInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(event) {
+            selectedImageData = event.target.result;
+            previewImg.src = selectedImageData;
+            imagePreview.classList.add('has-image');
+            removeImageBtn.classList.add('show');
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      removeImageBtn.addEventListener('click', function() {
+        imageInput.value = '';
+        previewImg.src = '';
+        selectedImageData = null;
+        imagePreview.classList.remove('has-image');
+        removeImageBtn.classList.remove('show');
+      });
+
+      // Handle form submission
+      document.getElementById('addRecipeForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const title = document.getElementById('Recipe_title').value;
+        const content = document.getElementById('Recipe_box').value;
+        
+        if (title.trim() === '' || content.trim() === '') {
+          alert('Please fill in both title and recipe content!');
+          return;
+        }
+        
+        // Get existing recipes from localStorage or initialize empty array
+        let recipes = JSON.parse(localStorage.getItem('recipes') || '[]');
+        
+        // Create new recipe object
+        const newRecipe = {
+          id: Date.now(),
+          title: title,
+          content: content,
+          image: selectedImageData, // Store base64 image data
+          createdAt: new Date().toISOString()
+        };
+        
+        // Add to recipes array
+        recipes.push(newRecipe);
+        
+        // Save back to localStorage
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+        
+        // Show success message
+        alert('Recipe saved successfully!');
+        
+        // Clear the form
+        document.getElementById('Recipe_title').value = '';
+        document.getElementById('Recipe_box').value = '';
+        removeImageBtn.click(); // Clear image preview
+        
+        // Optionally redirect to dashboard
+        // window.location.href = 'dashboard.html';
+      });
+
+      // Search functionality (searches through saved recipes)
+      document.querySelector('.search').addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        console.log('Searching for:', searchTerm);
+        // You can implement live search preview here if needed
+      });
+    </script>
   </body>
-  <script src="js/script.js"></script>
 </html>

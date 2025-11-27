@@ -31,7 +31,6 @@ body {
   display: grid;
 }
 
-/* ---------- Sidebar base ---------- */
 .sidebar {
   position: fixed;
   top: 0;
@@ -52,7 +51,7 @@ body {
   width: var(--sidebar-expanded);
 }
 
-/* ---------- Toggle button ---------- */
+/*  Toggle button  */
 #menubtn {
   position: absolute;
   top: 0.6rem;
@@ -72,7 +71,7 @@ body {
   transform: translateX(-50%) rotate(180deg);
 }
 
-/* ---------- Logo ---------- */
+/*  Logo  */
 .top .logo {
   display: flex;
   align-items: center;
@@ -88,7 +87,7 @@ body {
   opacity: 1;
 }
 
-/* ---------- User ---------- */
+/*  User  */
 .user {
   display: flex;
   align-items: center;
@@ -114,7 +113,7 @@ body {
   opacity: 1;
 }
 
-/* ---------- Nav ---------- */
+/*  Nav  */
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -166,7 +165,7 @@ body {
   opacity: 1;
 }
 
-/* ---------- Tooltip ---------- */
+/*  Tooltip  */
 .sidebar ul li .tooltip {
   position: absolute;
   left: calc(var(--sidebar-collapsed) + 10px);
@@ -194,7 +193,7 @@ body {
   display: none;
 }
 
-/* ---------- Main Content ---------- */
+/*  Main Content  */
 .main-content {
   position: relative;
   display: grid;
@@ -286,7 +285,7 @@ body {
   font-size: 14px;
 }
 
-/* ---------- Responsiveness ---------- */
+/*  Responsiveness  */
 @media (max-width: 600px) {
   :root {
     font-size: 13px;

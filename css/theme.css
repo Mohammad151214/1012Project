@@ -1,78 +1,115 @@
-/* Simple Dark Mode */
-
+/* Theme Variables */
 :root {
-  --bg-color: #f4f5fa;
-  --card-bg: #ffffff;
-  --text-color: rgb(1, 10, 48);
-  --text-secondary: #555;
+  --bg-primary: #f4f5fa;
+  --bg-secondary: #ffffff;
+  --text-primary: rgb(1, 10, 48);
+  --text-secondary: #666;
+  --text-light: #999;
   --border-color: #ddd;
   --input-bg: #f9f9f9;
+  --sidebar-bg: rgb(1, 10, 48);
+  --recipe-img-bg: rgb(1, 10, 48);
 }
 
 body.dark-mode {
-  --bg-color: #1a1a2e;
-  --card-bg: #16213e;
-  --text-color: #e8eaf6;
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --text-primary: #e8eaf6;
   --text-secondary: #b0b3c1;
-  --border-color: #374151;
-  --input-bg: #2d3748;
+  --text-light: #8a8d9b;
+  --border-color: #2d3748;
+  --input-bg: #1f2937;
+  --sidebar-bg: #0a0e27;
+  --recipe-img-bg: #2d3748;
 }
 
-/* Apply theme */
+/* Basic Theme Application */
 body {
-  background: var(--bg-color);
-  color: var(--text-color);
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
-.main-content {
-  background-color: var(--bg-color);
+.main-content,
+.dashboard-container,
+.add-recipe-container,
+.profileSettings {
+  background: var(--bg-primary);
 }
 
+/* Cards */
 .recipe-card,
 .recipe-form-card,
 .profile-card {
-  background: var(--card-bg);
+  background: var(--bg-secondary);
   border-color: var(--border-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text-color);
+/* Text */
+h1, h2, h3, h4, h5, h6,
+.recipe-info h3,
+.dashboard-container h1,
+.add-recipe-container h1,
+.profileSettings h1 {
+  color: var(--text-primary);
 }
 
 .recipe-info p {
   color: var(--text-secondary);
 }
 
+/* Inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea,
-.search,
-.topnav input[type="text"] {
+.search {
   background: var(--input-bg);
-  color: var(--text-color);
+  color: var(--text-primary);
   border-color: var(--border-color);
 }
 
-input::placeholder,
-textarea::placeholder,
-.search::placeholder {
-  color: var(--text-secondary);
-}
-
-input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
 textarea:focus,
 .search:focus {
-  background: var(--card-bg);
-  border-color: var(--text-color);
+  background: var(--bg-secondary);
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-light);
+}
+
+/* Other Elements */
 .recipe-img {
-  background-color: var(--border-color);
+  background-color: var(--recipe-img-bg);
 }
 
-.profileSettings {
-  background: var(--bg-color);
+.image-preview {
+  background: var(--input-bg);
+  border-color: var(--border-color);
+}
+
+.image-preview-placeholder,
+label,
+.image-upload-label,
+.form-group label {
+  color: var(--text-primary);
+}
+
+.recipe-action-btn {
+  background: var(--input-bg);
+  border-color: var(--border-color);
+}
+
+.recipe-action-btn:hover {
+  background: var(--bg-secondary);
+}
+
+/* Sidebar stays dark */
+.sidebar {
+  background: var(--sidebar-bg);
 }
 
 /* Theme Toggle Button */
@@ -80,33 +117,22 @@ textarea:focus,
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  background: rgb(1, 10, 48);
-  color: white;
-  border: 2px solid rgb(1, 10, 48);
+  background: var(--text-primary);
+  color: var(--bg-secondary);
+  border: none;
   cursor: pointer;
-  font-size: 1.4rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
-}
-
-body.dark-mode .theme-toggle {
-  background: #ffd700;
-  color: rgb(1, 10, 48);
-  border-color: #ffd700;
+  font-size: 1.5rem;
+  z-index: 1000;
 }
 
 .theme-toggle:hover {
-  transform: scale(1.05);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95);
+  opacity: 0.8;
 }
 
 .theme-toggle .fa-moon {
@@ -132,6 +158,6 @@ body.dark-mode .theme-toggle .fa-sun {
     right: 1rem;
     width: 50px;
     height: 50px;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }

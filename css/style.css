@@ -87,7 +87,7 @@ body {
   opacity: 1;
 }
 
-/*  User  */
+/*  User  Logo */
 .user {
   display: flex;
   align-items: center;
@@ -99,7 +99,6 @@ body {
   width:50px;
   height: auto;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .user p {

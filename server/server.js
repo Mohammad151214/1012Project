@@ -4,7 +4,8 @@ const path = require('path');
 
 const app = express();
 const PORT = 3000;
-const DATA_FILE = path.join(__dirname, '..', 'data', 'users.json');
+const USERS_FILE = path.join(__dirname, '..', 'data', 'users.json');
+const RECIPES_FILE = path.join(__dirname, '..', 'data', 'recipes.json');
 
 // Middleware
 app.use(express.json());
@@ -18,9 +19,9 @@ app.use((req, res, next) => {
 });
 
 // Helper function to read data from file
-async function readData() {
+async function readData(filePath) {
   try {
-    const data = await fs.readFile(DATA_FILE, 'utf8');
+    const data = await fs.readFile(filePath, 'utf8');
     return data.trim() ? JSON.parse(data) : [];
   } catch (error) {
     if (error.code === 'ENOENT') {
@@ -31,16 +32,16 @@ async function readData() {
 }
 
 // Helper function to write data to file
-async function writeData(data) {
-  await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
+async function writeData(filePath, data) {
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
 }
 
-// API Routes (define these BEFORE static files)
+// ============= USER ROUTES =============
 
 // GET all users
 app.get('/api/users', async (req, res) => {
   try {
-    const users = await readData();
+    const users = await readData(USERS_FILE);
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: 'Failed to read data' });
@@ -50,7 +51,7 @@ app.get('/api/users', async (req, res) => {
 // GET single user by ID
 app.get('/api/users/:id', async (req, res) => {
   try {
-    const users = await readData();
+    const users = await readData(USERS_FILE);
     const user = users.find(u => u.id === parseInt(req.params.id));
     
     if (!user) {
@@ -66,7 +67,7 @@ app.get('/api/users/:id', async (req, res) => {
 // POST create new user
 app.post('/api/users', async (req, res) => {
   try {
-    const users = await readData();
+    const users = await readData(USERS_FILE);
     const { name, email } = req.body;
     
     if (!name || !email) {
@@ -81,7 +82,7 @@ app.post('/api/users', async (req, res) => {
     };
     
     users.push(newUser);
-    await writeData(users);
+    await writeData(USERS_FILE, users);
     
     res.status(201).json(newUser);
   } catch (error) {
@@ -92,7 +93,7 @@ app.post('/api/users', async (req, res) => {
 // PUT update user
 app.put('/api/users/:id', async (req, res) => {
   try {
-    const users = await readData();
+    const users = await readData(USERS_FILE);
     const index = users.findIndex(u => u.id === parseInt(req.params.id));
     
     if (index === -1) {
@@ -108,7 +109,7 @@ app.put('/api/users/:id', async (req, res) => {
       updatedAt: new Date().toISOString()
     };
     
-    await writeData(users);
+    await writeData(USERS_FILE, users);
     res.json(users[index]);
   } catch (error) {
     res.status(500).json({ error: 'Failed to update user' });
@@ -118,7 +119,7 @@ app.put('/api/users/:id', async (req, res) => {
 // DELETE user
 app.delete('/api/users/:id', async (req, res) => {
   try {
-    const users = await readData();
+    const users = await readData(USERS_FILE);
     const index = users.findIndex(u => u.id === parseInt(req.params.id));
     
     if (index === -1) {
@@ -126,7 +127,7 @@ app.delete('/api/users/:id', async (req, res) => {
     }
     
     const deletedUser = users.splice(index, 1)[0];
-    await writeData(users);
+    await writeData(USERS_FILE, users);
     
     res.json({ message: 'User deleted', user: deletedUser });
   } catch (error) {
@@ -137,7 +138,7 @@ app.delete('/api/users/:id', async (req, res) => {
 // POST login endpoint
 app.post('/api/login', async (req, res) => {
   try {
-    const users = await readData();
+    const users = await readData(USERS_FILE);
     const { email, password } = req.body;
     
     if (!email || !password) {
@@ -164,7 +165,7 @@ app.post('/api/login', async (req, res) => {
 // POST signup endpoint
 app.post('/api/signup', async (req, res) => {
   try {
-    const users = await readData();
+    const users = await readData(USERS_FILE);
     const { name, email, password } = req.body;
     
     if (!name || !email || !password) {
@@ -186,7 +187,7 @@ app.post('/api/signup', async (req, res) => {
     };
     
     users.push(newUser);
-    await writeData(users);
+    await writeData(USERS_FILE, users);
     
     // Return user without password
     const { password: _, ...userWithoutPassword } = newUser;
@@ -196,6 +197,106 @@ app.post('/api/signup', async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ error: 'Signup failed' });
+  }
+});
+
+// ============= RECIPE ROUTES =============
+
+// GET all recipes
+app.get('/api/recipes', async (req, res) => {
+  try {
+    const recipes = await readData(RECIPES_FILE);
+    res.json(recipes);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to read recipes' });
+  }
+});
+
+// GET single recipe by ID
+app.get('/api/recipes/:id', async (req, res) => {
+  try {
+    const recipes = await readData(RECIPES_FILE);
+    const recipe = recipes.find(r => r.id === parseInt(req.params.id));
+    
+    if (!recipe) {
+      return res.status(404).json({ error: 'Recipe not found' });
+    }
+    
+    res.json(recipe);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to read recipe' });
+  }
+});
+
+// POST create new recipe
+app.post('/api/recipes', async (req, res) => {
+  try {
+    const recipes = await readData(RECIPES_FILE);
+    const { title, content, userId } = req.body;
+    
+    if (!title || !content || !userId) {
+      return res.status(400).json({ error: 'Title, content and userId are required' });
+    }
+    
+    const newRecipe = {
+      id: recipes.length > 0 ? Math.max(...recipes.map(r => r.id)) + 1 : 1,
+      title,
+      content,
+      userId,
+      createdAt: new Date().toISOString()
+    };
+    
+    recipes.push(newRecipe);
+    await writeData(RECIPES_FILE, recipes);
+    
+    res.status(201).json(newRecipe);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to create recipe' });
+  }
+});
+
+// PUT update recipe
+app.put('/api/recipes/:id', async (req, res) => {
+  try {
+    const recipes = await readData(RECIPES_FILE);
+    const index = recipes.findIndex(r => r.id === parseInt(req.params.id));
+    
+    if (index === -1) {
+      return res.status(404).json({ error: 'Recipe not found' });
+    }
+    
+    const { title, content } = req.body;
+    
+    recipes[index] = {
+      ...recipes[index],
+      title: title || recipes[index].title,
+      content: content || recipes[index].content,
+      updatedAt: new Date().toISOString()
+    };
+    
+    await writeData(RECIPES_FILE, recipes);
+    res.json(recipes[index]);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update recipe' });
+  }
+});
+
+// DELETE recipe
+app.delete('/api/recipes/:id', async (req, res) => {
+  try {
+    const recipes = await readData(RECIPES_FILE);
+    const index = recipes.findIndex(r => r.id === parseInt(req.params.id));
+    
+    if (index === -1) {
+      return res.status(404).json({ error: 'Recipe not found' });
+    }
+    
+    const deletedRecipe = recipes.splice(index, 1)[0];
+    await writeData(RECIPES_FILE, recipes);
+    
+    res.json({ message: 'Recipe deleted', recipe: deletedRecipe });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete recipe' });
   }
 });
 
@@ -210,5 +311,6 @@ app.get('/', (req, res) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:3000`);
-  console.log(`Data file: ${DATA_FILE}`);
+  console.log(`Users file: ${USERS_FILE}`);
+  console.log(`Recipes file: ${RECIPES_FILE}`);
 });

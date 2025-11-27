@@ -97,8 +97,8 @@ body {
 }
 
 .user-img {
-  width: 46px;
-  height: 46px;
+  width:50px;
+  height: auto;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
@@ -207,18 +207,22 @@ body {
   transition: margin-left var(--transition-med) ease;
   overflow-y: auto;
 }
+
 .container {
   grid-column: 1 / span 3;
   margin-bottom: 10px;
 }
+
 .topnav {
-  overflow: hidden;
-  background-color: #e9e9e9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px;
+  margin: 10px 0 20px 0;
+  width: 100%;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
   display: block;
   color: black;
   text-align: center;
@@ -227,38 +231,36 @@ body {
   font-size: 17px;
 }
 
-/* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
   border: 1px solid #ccc;
 }
 
-/* Style the search box inside the navigation bar */
-.topnav input[type="text"] {
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
-}
-.search {
-  float: right;
-  width: 40rem;
-  height: 2rem;
+.topnav input[type="text"].search {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
   font-size: 1rem;
-  margin-top: 0.25rem;
+  outline: none;
+  background-color: white;
 }
+
+.topnav input[type="text"].search:focus {
+  border-color: #04AA6D;
+  box-shadow: 0 0 8px rgba(4, 170, 109, 0.3);
+}
+
 .sidebar.active ~ .main-content {
   margin-left: var(--sidebar-expanded);
 }
+
 .recipe-card {
   position: relative;
   display: flex;
   align-items: flex-start;
   background-color: #e6f0fa;
-
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -289,7 +291,7 @@ body {
   :root {
     font-size: 13px;
   }
-  /* Keep collapsed sidebar always visible */
+
   .sidebar {
     width: var(--sidebar-collapsed);
   }
@@ -300,7 +302,7 @@ body {
 
   .main-content {
     margin-left: var(--sidebar-collapsed);
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     font-size: 13px;
   }
 
@@ -308,10 +310,10 @@ body {
     margin-left: var(--sidebar-expanded);
   }
 
-  /* Tooltip reposition slightly for narrow view */
   .sidebar ul li .tooltip {
     left: calc(var(--sidebar-collapsed) + 6px);
   }
+
   .topnav a,
   .topnav input[type="text"] {
     float: none;
@@ -321,42 +323,40 @@ body {
     margin: 0;
     padding: 14px;
   }
+
   .topnav input[type="text"] {
     border: 1px solid #ccc;
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 600px) {
   :root {
     font-size: 14px;
   }
+
   .main-content {
     grid-template-columns: 1fr 1fr;
     margin-left: var(--sidebar-collapsed);
     font-size: 14px;
   }
-
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   :root {
     font-size: 15px;
   }
+
   .main-content {
     grid-template-columns: repeat(2, 1fr);
     font-size: 15px;
   }
-
-
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   :root {
     font-size: 16px;
   }
+
   .main-content {
     grid-template-columns: repeat(3, 1fr);
     font-size: 16px;
@@ -372,29 +372,27 @@ body {
   margin-left: 10px;
   text-align: center;
 }
+
 #Recipe_box {
   width: 70rem;
   min-height: 25rem;
   font-size: 3.5 rem;
-
   margin-left: 10px;
   text-align: justify;
 }
-/* css for myProfile page */
 
-.profileSettings{
-  /* position: relative; */
-  /* align-self: center; */
-text-align: center;
+/* css for myProfile page */
+.profileSettings {
+  text-align: center;
   margin-left: 13rem;
-  /* margin-top: 3rem; */
   width: 45rem;
   padding: 20px;
   background-color: white;
-grid-column: 1/span3;
+  grid-column: 1/span3;
   border: 5px solid black;
 }
- input[type=text], input[type=password] {
+
+input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -407,7 +405,6 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-/* Set a style for the submit button */
 .btn1 {
   background-color: #04AA6D;
   color: white;
@@ -416,10 +413,9 @@ input[type=text]:focus, input[type=password]:focus {
   cursor: pointer;
   width: 40%;
   opacity: 0.9;
- 
 }
+
 .btn2 {
-  
   background-color: rgb(241, 65, 65);
   color: white;
   padding: 16px 20px;
@@ -428,18 +424,17 @@ input[type=text]:focus, input[type=password]:focus {
   width: 40%;
   opacity: 0.9;
   margin-right: 6rem;
- 
 }
 
 .btn1:hover {
   opacity: 1;
 }
+
 .btn2:hover {
   opacity: 1;
 }
-/* --- Profile Picture Section --- */
 
-
+/* Profile Picture Section */
 .profile-pic-section img {
   width: 8rem;
   height: 8rem;
@@ -473,363 +468,4 @@ hr {
   width: 100%;
   border: 1px solid #ddd;
   margin: 20px 0;
-}
-/* Custom Font */
-@font-face {
-  font-family: Aptos;
-  src: url(../fonts/Aptos.ttf);
-}
-
-:root {
-  --sidebar-collapsed: 80px;
-  --sidebar-expanded: 250px;
-  --sidebar-bg: rgb(1, 10, 48);
-  --transition-fast: 0.25s;
-  --transition-med: 0.4s;
-}
-
-* {
-  font-family: Aptos, Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  min-height: 100vh;
-  background: #f4f5fa;
-  overflow: hidden;
-  display: grid;
-}
-
-/* ---------- Sidebar base ---------- */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: var(--sidebar-collapsed);
-  background: var(--sidebar-bg);
-  padding: 0.6rem 0.8rem;
-  display: flex;
-  flex-direction: column;
-  transition: width var(--transition-med) ease,
-    background-color var(--transition-med) ease;
-  box-shadow: 4px 0 18px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-.sidebar.active {
-  width: var(--sidebar-expanded);
-}
-
-/* ---------- Toggle button ---------- */
-#menubtn {
-  position: absolute;
-  top: 0.6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: antiquewhite;
-  font-size: 1.2rem;
-  line-height: 48px;
-  cursor: pointer;
-  transition: transform var(--transition-fast) ease,
-    left var(--transition-med) ease;
-  z-index: 1100;
-}
-
-.sidebar.active #menubtn {
-  left: 85%;
-  transform: translateX(-50%) rotate(180deg);
-}
-
-/* ---------- Logo ---------- */
-.top .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  height: 50px;
-  color: #fff;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--transition-fast) ease var(--transition-fast);
-}
-
-.sidebar.active .top .logo {
-  opacity: 1;
-}
-
-/* ---------- User ---------- */
-.user {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  margin: 0.6rem 0;
-}
-
-.user-img {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.9);
-}
-
-.user p {
-  color: #fff;
-  opacity: 0;
-  transition: opacity var(--transition-fast) ease var(--transition-fast);
-  white-space: nowrap;
-}
-
-.sidebar.active .user p {
-  opacity: 1;
-}
-
-/* ---------- Nav ---------- */
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 0.6rem;
-}
-
-.sidebar ul li {
-  position: relative;
-  margin: 0.4rem 0;
-}
-
-.sidebar ul li a {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0 0.4rem;
-  height: 48px;
-  border-radius: 10px;
-  color: #fff;
-  text-decoration: none;
-  transition: background-color var(--transition-fast),
-    transform var(--transition-fast);
-}
-
-.sidebar ul li a:hover {
-  background: rgba(255, 255, 255, 0.05);
-  transform: translateY(-2px);
-  color: #ddd;
-}
-
-.sidebar ul li a i {
-  min-width: 48px;
-  text-align: center;
-  font-size: 1.2rem;
-  transition: text-shadow var(--transition-fast);
-}
-
-.sidebar ul li a:hover i {
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
-}
-
-.nav-item {
-  opacity: 0;
-  transition: opacity var(--transition-fast) ease var(--transition-fast);
-  white-space: nowrap;
-}
-
-.sidebar.active .nav-item {
-  opacity: 1;
-}
-
-/* ---------- Tooltip ---------- */
-.sidebar ul li .tooltip {
-  position: absolute;
-  left: calc(var(--sidebar-collapsed) + 10px);
-  top: 50%;
-  transform: translateY(-50%);
-  background: #111;
-  color: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-fast), transform var(--transition-fast);
-  z-index: 999;
-}
-
-.sidebar:not(.active) ul li:hover .tooltip {
-  opacity: 1;
-  transform: translateY(-50%) translateX(6px);
-}
-
-.sidebar.active ul li .tooltip {
-  display: none;
-}
-
-/* ---------- Main Content ---------- */
-.main-content {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 10px;
-  min-height: 100vh;
-  margin-left: var(--sidebar-collapsed);
-  padding: 1rem;
-  background-color: #f4f4f4;
-  transition: margin-left var(--transition-med) ease;
-  overflow-y: auto;
-}
-.container {
-  grid-column: 1 / span 3;
-  margin-bottom: 10px;
-}
-.topnav {
- display: flex;
- justify-content: flex-start;
- align-items: center;
- padding: 0px;
- margin: 10px 0 20px 0;
- width: 100%;
-
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-  border: 1px solid #ccc;
-}
-
-/* Style the search box inside the navigation bar */
-/* was not working so fixed it by removing float adding flexbox */
-.topnav input[type="text"].search {
-  flex: 1;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 2px solid #ccc;
-  font-size: 1rem;
-  outline: none;
-  background-color: white; 
-
-}
-.topnav input[type="text"].search:focus {
-  border-color: #04AA6D;
-  box-shadow: 0 0 8px rgba(4, 170, 109, 0.3);
-}
-
-
-
-.sidebar.active ~ .main-content {
-  margin-left: var(--sidebar-expanded);
-}
-.recipe-card {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  background-color: #e6f0fa;
-
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-}
-
-.recipe-img {
-  width: 80px;
-  height: 100px;
-  background-color: #c2d8f0;
-  margin-right: 10px;
-  border-radius: 5px;
-  align-self: center;
-}
-
-.recipe-info h3 {
-  font-size: clamp(0.9rem, calc(1.5vw + 1rem), 1rem);
-  margin-bottom: 5px;
-}
-
-.recipe-info p {
-  color: #555;
-  font-size: 14px;
-}
-
-/* ---------- Responsiveness ---------- */
-@media (max-width: 600px) {
-  :root {
-    font-size: 13px;
-  }
-  /* Keep collapsed sidebar always visible */
-  .sidebar {
-    width: var(--sidebar-collapsed);
-  }
-
-  .sidebar.active {
-    width: var(--sidebar-expanded);
-  }
-
-  .main-content {
-    margin-left: var(--sidebar-collapsed);
-    grid-template-columns: 1fr ;
-    font-size: 13px;
-  }
-
-  .sidebar.active ~ .main-content {
-    margin-left: var(--sidebar-expanded);
-  }
-
-  /* Tooltip reposition slightly for narrow view */
-  .sidebar ul li .tooltip {
-    left: calc(var(--sidebar-collapsed) + 6px);
-  }
-  .topnav a,
-  .topnav input[type="text"] {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .topnav input[type="text"] {
-    border: 1px solid #ccc;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 600px) {
-  :root {
-    font-size: 14px;
-  }
-  .main-content {
-    grid-template-columns: 1fr 1fr;
-    margin-left: var(--sidebar-collapsed);
-    font-size: 14px;
-  }
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  :root {
-    font-size: 15px;
-  }
-  .main-content {
-    grid-template-columns: repeat(2, 1fr);
-    font-size: 15px;
-  }
 }

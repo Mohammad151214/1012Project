@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recipe Vault</title>
+    <title>Recipe Vault - Edit Recipe</title>
+    <script src="js/script.js" defer></script>
     <script>
       if (!localStorage.getItem("user")) {
         window.location.href = "login.html";
@@ -13,8 +14,8 @@
       src="https://kit.fontawesome.com/c13af7bb57.js"
       crossorigin="anonymous"
     ></script>
-
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/addRecipe.css" />
     <link rel="stylesheet" type="text/css" href="css/theme.css" />
     <script src="js/script.js" defer></script>
     <script src="js/recipe.js" defer></script>
@@ -74,31 +75,37 @@
     </div>
 
     <div class="main-content">
-      <div class="container">
+      <div class="add-recipe-container">
         <h1>Edit Recipe</h1>
-      </div>
 
-      <form action="" method="post">
-        <input
-          type="text"
-          id="Recipe_title"
-          name="Recipe_title"
-          placeholder="Recipe title"
-        />
-        <textarea
-          id="Recipe_box"
-          name="editorContent"
-          placeholder="Type your recipe..."
-        ></textarea
-        ><br /><br />
-        <input type="submit" value="Save Changes" />
-      </form>
+        <div class="recipe-form-card">
+          <form id="addRecipeForm" action="" method="post">
+            <input
+              type="text"
+              id="Recipe_title"
+              name="Recipe_title"
+              placeholder="Recipe Title"
+              required
+            />
+
+            <textarea
+              id="Recipe_box"
+              name="editorContent"
+              placeholder="Type your recipe here...
+
+Instructions, ingredients, cooking time, etc."
+              required
+            ></textarea>
+            <input type="submit" value="Save Recipe" />
+          </form>
+        </div>
+      </div>
     </div>
+    <script>
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.href = "login.html";
+      }
+    </script>
   </body>
-  <script>
-    function logout() {
-      localStorage.removeItem("user");
-      window.location.href = "login.html";
-    }
-  </script>
 </html>

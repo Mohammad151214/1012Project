@@ -44,3 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Add to body
   document.body.appendChild(themeToggleBtn);
 });
+
+
+const searchbox = document.getElementById

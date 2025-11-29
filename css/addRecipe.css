@@ -1,55 +1,48 @@
+/* Add Recipe Page Styles */
 
-/* Add Recipe Page Styles */ 
-
-/* Override main-content for add recipe page */ 
+/* Override main-content for add recipe page */
 
 .main-content .add-recipe-container {
   /*spanning all  teh columns  */
   grid-column: 1 / -1;
-  
-  
+
   /*setting width to 100%  */
-    width: 100%;
+  width: 100%;
   /*adding 2rem of padding for the purpose of spacinfg  */
   padding: 2rem;
 }
 
 .add-recipe-container h1 {
   /* adding a heading thats responisive and can change size */
-       font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   /*setting teh colour of the heading  */
-     color: rgb(1, 10, 48);
- 
-  
-      /*adding a margin ath teh bottom  */
+  color: rgb(1, 10, 48);
+
+  /*adding a margin ath teh bottom  */
   margin-bottom: 1.5rem;
   /* choosing the font weight  */
   font-weight: 600;
 }
 
- /*search bar  */
+/*search bar  */
 .add-recipe-container .topnav {
   /*making sure to add flex  */
-    display: flex;
-   /*making teh contnetn go to flex start  */
+  display: flex;
+  /*making teh contnetn go to flex start  */
   justify-content: flex-start;
   /* aligning item in the center */
- 
-  
-  align-items: center;
-    /* adding 0 padding */
-    padding: 0;
-   /* setting up teh margin accordingly  */
 
-  
-  
+  align-items: center;
+  /* adding 0 padding */
+  padding: 0;
+  /* setting up teh margin accordingly  */
+
   margin: 0 0 2rem 0;
   /* making width 100% so that it spans the whole page  */
   width: 100%;
   /* no background essentially  */
   background: transparent;
 }
-
 
 .add-recipe-container .topnav input[type="text"].search {
   /*  this helps code grow till it take sup all space avaialbe */
@@ -58,19 +51,17 @@
   /* adding padding */
   padding: 12px 16px;
   /* for rounded cornners we are adding border radius  */
-      border-radius: 12px;
-  
+  border-radius: 12px;
+
   /* adding border */
 
-  
   border: 2px solid #ccc;
   /* setting text size */
-   font-size: 1rem;
+  font-size: 1rem;
 
-  
   /* adding no outline   */
-      outline: none;
-  
+  outline: none;
+
   /* making the background colour white  */
   background-color: white;
   /* to add and get  a smoot transition we are doing this */
@@ -81,27 +72,25 @@
   /*  choosinf a  border colour*/
   border-color: rgb(1, 10, 48);
 
-  
-      /* adding a shadow to the box  */
+  /* adding a shadow to the box  */
   box-shadow: 0 0 8px rgba(1, 10, 48, 0.2);
 }
 
 /*form card  */
 .recipe-form-card {
   /* setting background colour to whire  */
-    background: white;
-   /* rounded corners */
-  
+  background: white;
+  /* rounded corners */
+
   border-radius: 12px;
-  
+
   /* addinf padding */
   padding: 2.5rem;
   /* adding a  shoadow */
-  
-  
+
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   /* making width take up the whole page  */
-    width: 100%;
+  width: 100%;
 
   /* choosing format for box sizing */
   box-sizing: border-box;
@@ -111,7 +100,7 @@
 .recipe-form-card form {
   /* making sure to add flex */
   display: flex;
-  
+
   /* cjoosing the felx deirection */
   flex-direction: column;
   /*addinf a gap  */
@@ -121,48 +110,41 @@
 /*  Recipe Title Input */
 .recipe-form-card #Recipe_title {
   /*making it span teh whiole page  */
-   width: 100%;
-  
-  
+  width: 100%;
+
   /*adding padding  */
   padding: 14px 18px;
-/*chosing font size  */
+  /*chosing font size  */
 
-   font-size: 1.5rem;
+  font-size: 1.5rem;
   /* setting up border */
   border: 2px solid #e0e0e0;
 
-  
   /* rounded corners */
   border-radius: 12px;
   /*adding smooth transiotn  */
   transition: all 0.3s ease;
 
-  
-      /*choosing background olur  */
+  /*choosing background olur  */
   background: #f9f9f9;
   /* choosing bao sizing */
 
-  
-     box-sizing: border-box;
+  box-sizing: border-box;
   /*chosnigna a font weight  */
-  
-  
-        font-weight: 600;
+
+  font-weight: 600;
   /*colour = the one choosen  */
   color: rgb(1, 10, 48);
 }
 
 .recipe-form-card #Recipe_title:focus {
   /* white background */
-  background: white; 
+  background: white;
 
-  
   /*chosing border colour  */
-    border-color: rgb(1, 10, 48);
+  border-color: rgb(1, 10, 48);
   /* ading no outline */
 
-  
   outline: none;
   /*chosing box shaodow  */
   box-shadow: 0 0 8px rgba(1, 10, 48, 0.2);
@@ -178,11 +160,10 @@
 /* Image Upload Section  */
 .image-upload-section {
   /*adding flex  */
-    display: flex;
+  display: flex;
   /* chosoigna direction of flex */
   flex-direction: column;
   /* alignign items in center */
- 
 
   align-items: center;
   /*adding gap  */
@@ -204,25 +185,24 @@
   /* seetig teh width and heigt */
   width: 250px;
 
-    height: 250px;
+  height: 250px;
   /* choosing border */
   border: 2px dashed #ccc;
 
   /*for rounded corners  */
   border-radius: 12px;
-  
-    /*adding flex  */
-    display: flex;
+
+  /*adding flex  */
+  display: flex;
   /* center */
-      align-items: center;
+  align-items: center;
   /*center  */
-    justify-content: center;
- 
-  
+  justify-content: center;
+
   /*backgroudn colour  */
   background: #f9f9f9;
   /*hiding overflow  */
-      overflow: hidden;
+  overflow: hidden;
   /*       seeting position to be reletive  */
   position: relative;
 }
@@ -234,7 +214,7 @@
   height: 100%;
   /*mkaing object fit in the form of cover  */
   object-fit: cover;
-  
+
   display: none;
 }
 
@@ -250,7 +230,7 @@
 
 .image-preview-placeholder {
   /* aliginign text in the center */
-  
+
   text-align: center;
   /* chosing colour */
   color: #999;
@@ -259,104 +239,96 @@
 .image-preview-placeholder i {
   /* font size should be rem */
   font-size: 3rem;
-  
+
   /* choosing colour */
   color: #ddd;
-      /*adding margin to the bottom  */
-     margin-bottom: 0.5rem;
+  /*adding margin to the bottom  */
+  margin-bottom: 0.5rem;
   /*adding flex  */
   display: block;
 }
 
 .image-upload-controls {
-    /*adding flec  */
+  /*adding flec  */
   display: flex;
-/* choosing the direction of flex as column */
+  /* choosing the direction of flex as column */
 
-  
   flex-direction: column;
   /* alinging items in center */
   align-items: center;
-     /* adding gap */
+  /* adding gap */
   gap: 0.75rem;
 }
 
 .upload-btn-custom {
   /* background */
-  
-  
+
   background: rgb(1, 10, 48);
   /*colour  */
-      color: white;
+  color: white;
 
   /*adding padding  */
-        padding: 12px 24px;
+  padding: 12px 24px;
   /*adding border  */
   border: none;
- 
-  
-      /*rounding eeges  */
+
+  /*rounding eeges  */
   border-radius: 8px;
 
-    /*cursor should eb pointer  */
+  /*cursor should eb pointer  */
   cursor: pointer;
-   /* font size is 1 rem */
+  /* font size is 1 rem */
   font-size: 1rem;
-    /*choosing font weight to be 600 (bold)  */
-  
+  /*choosing font weight to be 600 (bold)  */
+
   font-weight: 600;
   /*adding smooth transiont  */
   transition: all 0.3s ease;
   /* ading flex */
-  
-  
+
   display: inline-flex;
-    /* allinging items center */
-    align-items: center;
-   /* gap */
-    gap: 0.5rem;
+  /* allinging items center */
+  align-items: center;
+  /* gap */
+  gap: 0.5rem;
 }
 
 .upload-btn-custom:hover {
   /*background colour  */
-  
-  
+
   background: #1a2a6c;
   /*ad  ding transformation  */
-    
-  
+
   transform: translateY(-2px);
-      /*adding box shadow  */
+  /*adding box shadow  */
   box-shadow: 0 4px 12px rgba(1, 10, 48, 0.3);
 }
 
 .remove-image-btn {
   /* background colour */
   background: #f44336;
- 
-  
+
   /* choosing colour as white */
-   color: white;
-   /* adding padding */
-      padding: 10px 20px;
-     
-        /*adding no border  */
-    border: none;
-    /* adding border radsis as 8  */
-      border-radius: 8px;
+  color: white;
+  /* adding padding */
+  padding: 10px 20px;
+
+  /*adding no border  */
+  border: none;
+  /* adding border radsis as 8  */
+  border-radius: 8px;
   /* adding cursor pointer  */
-  
-  
+
   cursor: pointer;
   /*font size 0.95 rem  */
-    font-size: 0.95rem;
-      /* choosing how bold the font */
-  
+  font-size: 0.95rem;
+  /* choosing how bold the font */
+
   font-weight: 600;
   /* adding transition  */
-      transition: all 0.3s ease;
+  transition: all 0.3s ease;
   /* adding display none */
-    display: none;
+  display: none;
 }
 
 .remove-image-btn.show {
@@ -369,8 +341,8 @@
 
   background: #d32f2f;
   /* adding transformatinos */
-       transform: translateY(-2px);
-  
+  transform: translateY(-2px);
+
   /* adding box hshadow  */
   box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
 }
@@ -383,45 +355,42 @@
 /* Recipe Content Textarea  */
 .recipe-form-card #Recipe_box {
   /* making widht 100% to take adavantge of the whoel page */
-      width: 100%;
-      /* setting min heigt to be 500px */
- 
-  
+  width: 100%;
+  /* setting min heigt to be 500px */
+
   min-height: 500px;
   /*adding padding of 18px  */
-    padding: 18px;
+  padding: 18px;
   /* font size is  1 rem */
-  
-  
+
   font-size: 1rem;
-    /*  making the border 2 px */
+  /*  making the border 2 px */
   border: 2px solid #e0e0e0;
   /* rounding edges */
-      border-radius: 12px;
+  border-radius: 12px;
 
   /* adding a transiotn */
   transition: all 0.3s ease;
-    /*choosing the background  */
+  /*choosing the background  */
   background: #f9f9f9;
-     /*adding box sizing for the purpose of formattintg   */
-      box-sizing: border-box;
-  
+  /*adding box sizing for the purpose of formattintg   */
+  box-sizing: border-box;
+
   /* making the resize of need be to be horizontal  */
-        resize: vertical;
-          /* making sure that the fonts are inherited */
- 
+  resize: vertical;
+  /* making sure that the fonts are inherited */
+
   font-family: inherit;
   /* adding line heig for the purpose of mkaing it look better and more visualy appealing */
-     line-height: 1.6;
+  line-height: 1.6;
 }
 
 .recipe-form-card #Recipe_box:focus {
   /*making te background white  */
   background: white;
-    /*background colir   */
-      border-color: rgb(1, 10, 48);
-  
-  
+  /*background colir   */
+  border-color: rgb(1, 10, 48);
+
   /* choosng outline  */
   outline: none;
   /*adding box hsaodw  */
@@ -437,34 +406,33 @@
 .recipe-form-card input[type="submit"],
 .recipe-form-card button[type="submit"] {
   /*making backgourn the colour  */
-    background: rgb(1, 10, 48);
+  background: rgb(1, 10, 48);
   /* chosing white as the colour */
   color: white;
   /* adding padding   */
-   
-  
-      padding: 16px 32px;
+
+  padding: 16px 32px;
   /* adding border as noen */
-   border: none;
-  
-    /* making the border raidus as 8px  */
-   border-radius: 8px;
+  border: none;
+
+  /* making the border raidus as 8px  */
+  border-radius: 8px;
   /* curso should eb poitner */
-   cursor: pointer;
-  
-     /* font size was set up as 1.1 re, */
-   font-size: 1.1rem;
+  cursor: pointer;
+
+  /* font size was set up as 1.1 re, */
+  font-size: 1.1rem;
   /*choosing how bold the dont is  */
-     font-weight: 600;
+  font-weight: 600;
   /* adding a transiiotn */
-      transition: all 0.3s ease;
-  
+  transition: all 0.3s ease;
+
   /*adding a min width  */
-     min-width: 200px;
+  min-width: 200px;
   /*setting margin to auto for fomratining purposes  */
   margin: 0 auto;
-  
-     display: block;
+
+  display: block;
 }
 
 .recipe-form-card input[type="submit"]:hover,
@@ -472,7 +440,7 @@
   /* chooseing ackground  */
   background: #1a2a6c;
   /*transomfm properti  */
-        
+
   transform: translateY(-2px);
   /* adding box shadown */
   box-shadow: 0 4px 12px rgba(1, 10, 48, 0.3);
@@ -488,26 +456,25 @@
 @media (max-width: 768px) {
   .add-recipe-container {
     /* adding paddng */
-        padding: 1.5rem;
+    padding: 1.5rem;
   }
 
   .recipe-form-card {
     /* padding */
-        padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem;
   }
 
   .recipe-form-card #Recipe_title {
     /* font size and padding */
-       
+
     font-size: 1.25rem;
-        padding: 12px 16px;
+    padding: 12px 16px;
   }
 
   .recipe-form-card #Recipe_box {
-     /* adding min height and padding */
-     min-height: 400px;
-     
-    
+    /* adding min height and padding */
+    min-height: 400px;
+
     padding: 14px;
     /* chosoign font size */
     font-size: 0.95rem;
@@ -517,8 +484,8 @@
   .recipe-form-card button[type="submit"] {
     /* choosing widht */
     width: 100%;
-        /*padding is being added  */
-     
+    /*padding is being added  */
+
     padding: 14px 24px;
     /* chosoe font size */
     font-size: 1rem;
@@ -530,9 +497,9 @@
   }
 
   .image-preview {
-      /*setting widtha s 100%  */
-  
-        width: 100%;
+    /*setting widtha s 100%  */
+
+    width: 100%;
     /*setting max width as 300px  */
     max-width: 300px;
   }
@@ -540,7 +507,7 @@
   .upload-btn-custom,
   .remove-image-btn {
     /* with is auto */
-      width: auto;
+    width: auto;
 
     /* min width is 200px */
     min-width: 200px;
@@ -550,7 +517,7 @@
 @media (max-width: 480px) {
   .add-recipe-container {
     /*adding padding  */
-    
+
     padding: 1rem;
   }
 
@@ -567,23 +534,23 @@
   .recipe-form-card #Recipe_title {
     /*chooosing font size  */
     font-size: 1.1rem;
-       
-      /*adding padding  */
+
+    /*adding padding  */
     padding: 10px 14px;
   }
 
   .recipe-form-card #Recipe_box {
     /* seeiting mi heihgapdding and font size */
     min-height: 300px;
-   
-      padding: 12px;
+
+    padding: 12px;
     font-size: 0.9rem;
   }
 
   .image-preview {
     /* setting the width ot be 100% and max width to be only 250px */
     width: 100%;
-       
+
     max-width: 250px;
   }
 
@@ -592,27 +559,27 @@
     /*setting width to be 100%  */
     width: 100%;
   }
-} */
+}
+*/
  /* Add Recipe Page */
 
 .main-content .add-recipe-container {
   /* adding grid column layouy */
 
-  
-      grid-column: 1 / -1;
+  grid-column: 1 / -1;
   /*setting width to be 100%  */
   width: 100%;
 
-    /*adding padding  */
+  /*adding padding  */
   padding: 2rem;
 }
 
 .add-recipe-container h1 {
   /*choossing font size and colour  */
-    font-size: 2rem;
-   
-    color: rgb(1, 10, 48);
-    /* adding margin at the bototm */
+  font-size: 2rem;
+
+  color: rgb(1, 10, 48);
+  /* adding margin at the bototm */
   margin-bottom: 1.5rem;
 }
 
@@ -626,19 +593,18 @@
 .recipe-form-card {
   /*choosing background as well as settin up border radius  */
   background: white;
-  
-        border-radius: 8px;
-    /* adding padding and box shadow */
-   
-      padding: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  border-radius: 8px;
+  /* adding padding and box shadow */
+
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .recipe-form-card form {
   /* adding flexwith direction in column mannner*/
   display: flex;
 
-  
   flex-direction: column;
   /* adding gap for the purpose of formatting */
   gap: 1.5rem;
@@ -648,15 +614,15 @@
 #Recipe_title {
   /*adding width deimensions and the padding  */
   width: 100%;
-  
-    padding: 12px;
-         /* chosig the font size and the bordr */
-     
-            font-size: 1.3rem;
-      border: 2px solid #ddd;
-  
+
+  padding: 12px;
+  /* chosig the font size and the bordr */
+
+  font-size: 1.3rem;
+  border: 2px solid #ddd;
+
   /*adding brde rradius and background  */
-    border-radius: 8px;
+  border-radius: 8px;
   background: #f9f9f9;
 }
 
@@ -670,35 +636,31 @@
 #Recipe_box {
   /*making width = 100% and min height as 400px  */
   width: 100%;
- 
-    min-height: 400px;
-/*adding padding  */
+
+  min-height: 400px;
+  /*adding padding  */
   padding: 15px;
-/* choosing font sixe and border */
+  /* choosing font sixe and border */
   font-size: 1rem;
-  
-  
-    border: 2px solid #ddd;
+
+  border: 2px solid #ddd;
   /* adding border radius for ounded corners */
-    border-radius: 8px;
+  border-radius: 8px;
   /*adding background  */
-     background: #f9f9f9;
-  
-      /* making sure that if resized it done verially */
+  background: #f9f9f9;
+
+  /* making sure that if resized it done verially */
   resize: vertical;
   /*inherrintg the font family  */
-  
-  
-    font-family: inherit;
+
+  font-family: inherit;
   /* setting th eline height */
   line-height: 1.5;
 }
 
 #Recipe_box:focus {
-  
-  
-    background: white;
-      border-color: rgb(1, 10, 48);
+  background: white;
+  border-color: rgb(1, 10, 48);
   outline: none;
 }
 
@@ -707,23 +669,21 @@
   /*setting up the backgroudn  */
   background: rgb(1, 10, 48);
   color: white;
- 
-  
-    /*adding padding  */
+
+  /*adding padding  */
   padding: 12px 30px;
-    /* no borers */
-    border: none;
+  /* no borers */
+  border: none;
   /*rounded corners acheived throug border raidus  */
   border-radius: 6px;
-    cursor: pointer;
+  cursor: pointer;
 
-  
-    /* setting font size */
+  /* setting font size */
   font-size: 1rem;
   /*adding that teh max width is 20opx  */
-    max-width: 200px;
+  max-width: 200px;
   /* adding amrgin dimension */
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .recipe-form-card input[type="submit"]:hover {
@@ -734,33 +694,32 @@
 /* Mobile */
 @media (max-width: 768px) {
   .add-recipe-container {
-        /* adding padding */
+    /* adding padding */
     padding: 1rem;
   }
 
   .recipe-form-card {
-        /* addined padding of 1.5 */
+    /* addined padding of 1.5 */
     padding: 1.5rem;
   }
 
   #Recipe_title {
-        /*aking ht efont size 1.1 rem  */
+    /*aking ht efont size 1.1 rem  */
     font-size: 1.1rem;
   }
 
   #Recipe_box {
-        /* minehigh is 300px */
+    /* minehigh is 300px */
     min-height: 300px;
   }
 
   .recipe-form-card input[type="submit"] {
-        /* choosin widht */
-     width: 100%;
-    
-    /* makingthe  max widht neone */
-      max-width: none;
-  }
+    /* choosin widht */
+    width: 100%;
 
+    /* makingthe  max widht neone */
+    max-width: none;
+  }
 }
 
 /* Rich Text Editor Styles */
@@ -863,4 +822,23 @@ body.dark-mode .format-btn:hover {
 
 body.dark-mode .editor-content {
   color: var(--text-primary);
+}
+
+/* category dropdown styling */
+#Recipe_category {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.2rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+  font-weight: 500;
+  color: rgb(1, 10, 48);
+}
+
+#Recipe_category:focus {
+  background: white;
+  border-color: rgb(1, 10, 48);
+  outline: none;
 }

@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="css/theme.css" />
     <script src="js/script.js" defer></script>
     <script src="js/recipe.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   </head>
   <body>
     <div class="sidebar">
@@ -87,16 +88,67 @@
               placeholder="Recipe Title"
               required
             />
-
-            <textarea
-              id="Recipe_box"
-              name="editorContent"
-              placeholder="Type your recipe here...
+            <select id="Recipe_category" name="Recipe_category" required>
+              <option value="">Select a category...</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="dessert">Dessert</option>
+              <option value="snack">Snack</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="other">Other</option>
+            </select>
+            <!-- Add the rich text editor here too (same as addRecipe.html) -->
+            <div id="editor-container">
+              <div id="editor-toolbar">
+                <button
+                  type="button"
+                  class="format-btn"
+                  data-command="bold"
+                  title="Bold (Ctrl+B)"
+                >
+                  <i class="fa-solid fa-bold"></i>
+                </button>
+                <button
+                  type="button"
+                  class="format-btn"
+                  data-command="insertUnorderedList"
+                  title="Bullet List"
+                >
+                  <i class="fa-solid fa-list-ul"></i>
+                </button>
+              </div>
+              <div
+                id="Recipe_box"
+                contenteditable="true"
+                class="editor-content"
+                placeholder="Type your recipe here...
 
 Instructions, ingredients, cooking time, etc."
-              required
-            ></textarea>
-            <input type="submit" value="Save Recipe" />
+              ></div>
+            </div>
+
+            <!-- Buttons -->
+            <div style="display: flex; gap: 10px; margin-top: 20px">
+              <input type="submit" value="Save Recipe" style="flex: 1" />
+              <button
+                type="button"
+                id="exportPdfBtn"
+                style="
+                  flex: 1;
+                  background: #2196f3;
+                  color: white;
+                  padding: 12px 30px;
+                  border: none;
+                  border-radius: 6px;
+                  cursor: pointer;
+                  font-size: 1rem;
+                "
+              >
+                <i class="fa-solid fa-file-pdf"></i> Export to PDF
+              </button>
+            </div>
           </form>
         </div>
       </div>

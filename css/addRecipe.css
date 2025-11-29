@@ -763,3 +763,104 @@
 
 }
 
+/* Rich Text Editor Styles */
+#editor-container {
+  width: 100%;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: #f9f9f9;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#editor-container:focus-within {
+  background: white;
+  border-color: rgb(1, 10, 48);
+  box-shadow: 0 0 8px rgba(1, 10, 48, 0.2);
+}
+
+#editor-toolbar {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  background: #f0f0f0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.format-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgb(1, 10, 48);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.format-btn:hover {
+  background: rgb(1, 10, 48);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.format-btn:active {
+  transform: translateY(0);
+}
+
+.editor-content {
+  min-height: 400px;
+  padding: 18px;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.6;
+  outline: none;
+  overflow-y: auto;
+}
+
+.editor-content:empty:before {
+  content: attr(placeholder);
+  color: #999;
+}
+
+.editor-content ul {
+  margin: 10px 0;
+  padding-left: 30px;
+}
+
+.editor-content li {
+  margin: 5px 0;
+}
+
+.editor-content strong {
+  font-weight: 600;
+}
+
+/* Dark mode support */
+body.dark-mode #editor-container {
+  background: var(--input-bg);
+  border-color: var(--border-color);
+}
+
+body.dark-mode #editor-toolbar {
+  background: var(--bg-secondary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .format-btn {
+  background: var(--input-bg);
+  color: var(--text-primary);
+}
+
+body.dark-mode .format-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-secondary);
+}
+
+body.dark-mode .editor-content {
+  color: var(--text-primary);
+}

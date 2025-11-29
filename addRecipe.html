@@ -87,16 +87,52 @@
               placeholder="Recipe Title"
               required
             />
-
-            <textarea
-              id="Recipe_box"
-              name="editorContent"
-              placeholder="Type your recipe here...
+            <select id="Recipe_category" name="Recipe_category" required>
+              <option value="">Select a category...</option>
+              <option value="breakfast">Breakfast</option>
+              <option value="lunch">Lunch</option>
+              <option value="dinner">Dinner</option>
+              <option value="dessert">Dessert</option>
+              <option value="snack">Snack</option>
+              <option value="vegan">Vegan</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="other">Other</option>
+            </select>
+            <div id="editor-container">
+              <div id="editor-toolbar">
+                <button
+                  type="button"
+                  class="format-btn"
+                  data-command="bold"
+                  title="Bold (Ctrl+B)"
+                >
+                  <i class="fa-solid fa-bold"></i>
+                </button>
+                <button
+                  type="button"
+                  class="format-btn"
+                  data-command="insertUnorderedList"
+                  title="Bullet List"
+                >
+                  <i class="fa-solid fa-list-ul"></i>
+                </button>
+              </div>
+              <div
+                id="Recipe_box"
+                contenteditable="true"
+                class="editor-content"
+                placeholder="Type your recipe here...
 
 Instructions, ingredients, cooking time, etc."
-              required
-            ></textarea>
-            <input type="submit" title="Ask AI for a recipe" id="ai" value="Inspire!" />
+              ></div>
+            </div>
+
+            <input
+              type="submit"
+              title="Ask AI for a recipe"
+              id="ai"
+              value="Inspire!"
+            />
             <input type="submit" value="Save Recipe" />
           </form>
         </div>

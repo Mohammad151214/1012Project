@@ -1,79 +1,10 @@
 [
   {
     "id": 1,
-    "title": "fds",
-    "content": "srfeasd",
+    "title": "Đậu Phụ Sốt Cà Chua (Tofu in Tomato Sauce)",
+    "content": "Ingredients:<br>- 300g spaghetti<br>- 4 cloves garlic<br>- 60ml extra virgin olive oil<br><br>Instructions:<br>1. Cook spaghetti in a large pot of salted boiling water according to package directions until al dente. Reserve about 1/2 cup of pasta water before draining.<br>2. While pasta cooks, thinly slice the garlic. Heat the olive oil in a large pan over medium-low heat. Add the sliced garlic and cook gently until fragrant and lightly golden, being careful not to burn it.<br>3. Add the drained spaghetti to the pan with the garlic and oil. Toss well, adding a splash of reserved pasta water if needed to create a light sauce. Season with salt and black pepper to taste and serve immediately.",
+    "category": "other",
     "userId": 4,
-    "createdAt": "2025-11-27T23:17:59.710Z"
-  },
-  {
-    "id": 2,
-    "title": "Biryani",
-    "content": "Add vsgvdequgcdbnvew",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:32:07.055Z"
-  },
-  {
-    "id": 3,
-    "title": "gkjhmgjyzcsjm",
-    "content": "salgibcvhwn",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:33:41.914Z"
-  },
-  {
-    "id": 4,
-    "title": "askdfkuqw",
-    "content": "dwcqigyckuwgv",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:33:49.715Z"
-  },
-  {
-    "id": 5,
-    "title": "savuyef,jbvhfe ",
-    "content": "dwgyuwqvkubhvJ",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:33:59.834Z"
-  },
-  {
-    "id": 6,
-    "title": "EQVRVEFVZXQDR",
-    "content": "FVFVVFERV",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:34:08.701Z"
-  },
-  {
-    "id": 7,
-    "title": "EQVRVEFVZXQDR",
-    "content": "FVFVVFERV",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:34:08.701Z"
-  },
-  {
-    "id": 8,
-    "title": "EQVRVEFVZXQDR",
-    "content": "FVFVVFERV",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:34:08.701Z"
-  },
-  {
-    "id": 9,
-    "title": "EQVRVEFVZXQDR",
-    "content": "FVFVVFERV",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:34:08.701Z"
-  },
-  {
-    "id": 10,
-    "title": "EQVRVEFVZXQDR",
-    "content": "FVFVVFERV",
-    "userId": 4,
-    "createdAt": "2025-11-27T23:34:08.701Z"
-  },
-  {
-    "id": 11,
-    "title": "Tortilla de Patatas",
-    "content": "Ingredients:\n- Patatas\n- Huevos\n- Cebolla\n\nInstructions:\n1. Pelar y cortar las patatas y la cebolla en rodajas finas. Freírlas en abundante aceite de oliva a fuego medio hasta que estén tiernas. Escurrir bien el aceite.\n2. Batir los huevos con sal en un bol grande. Añadir las patatas y la cebolla escurridas a los huevos y mezclar todo suavemente.\n3. Calentar un poco de aceite en una sartén antiadherente. Verter la mezcla y cocinar a fuego medio-bajo, volteando la tortilla para que se dore por ambos lados y cuaje.",
-    "userId": 4,
-    "createdAt": "2025-11-29T21:27:03.266Z"
+    "createdAt": "2025-11-29T22:50:25.370Z"
   }
 ]

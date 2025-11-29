@@ -15,240 +15,360 @@ html,
 }
 
 .profileSettings {
+  /* setting width to he 100% */
   width: 100%;
+  /* adding 0 margni */
   margin: 0;
+  /* padding  */
   padding: 2rem;
+  /* adding background */
   background: #f4f5fa;
+  /*adding a minheight   */
   min-height: calc(100vh - 2rem);
+  /*layput of the grid  */
   grid-column: 1 / -1;
+  /* adding flex */
   display: flex;
+  /*making the flex direction to be i the form of columns  */
   flex-direction: column;
+  /* aadding gap of 2rem */
   gap: 2rem;
 }
 
 .profileSettings h1 {
+  /* choosing the font size */
   font-size: clamp(1.75rem, 4vw, 2.5rem);
+  /* settin the colur */
   color: rgb(1, 10, 48);
+  /*adding amegin to the bootm  */
   margin-bottom: 1.5rem;
+  /*choosing how bold the font is  */
   font-weight: 600;
+  /*makin the txt align in teh center  */
   text-align: center;
 }
 
 /* Profile Card Container */
 .profile-card {
+  /*backgroun being set yup as white  */
   background: white;
+  /*adding orde radius for rounded edges  */
   border-radius: 16px;
+  /*adding box hsdow   */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /* adding padding */
   padding: 2.5rem;
+  /*seeting the predefined max width  */
   max-width: 900px;
+  /*making the width  */
   width: 100%;
+  /*setting margin as auto  */
   margin: 0 auto;
+  /* no border */
   border: none;
 }
 
 /* Profile Picture Section */
 .profile-pic-section {
+  /* displaying flex */
   display: flex;
+  /*choosinf flex directiom as column  */
   flex-direction: column;
+  /*alinging items int the center  */
   align-items: center;
+  /* adding gap as 1.5rem */
   gap: 1.5rem;
+  /*adding padding   */
   padding: 2rem 0;
+  /*adding border ath teh bottom  */
   border-bottom: 2px solid #e8eaf6;
+  /* adding margina t teh bottom */
   margin-bottom: 2rem;
 }
 
 .profile-pic-container {
+  /*making the position relative  */
   position: relative;
+  /* displaying inline block */
   display: inline-block;
 }
 
+
 .profile-pic-section img {
+  /*setting widht to be 140px  */
   width: 140px;
+  /*setting height to be 140 px as well  */
   height: 140px;
+  /*adding border radisu for roudned edges  */
   border-radius: 50%;
+  /*adding a border  */
   border: 4px solid rgb(1, 10, 48);
+  /* making the object fit to cover the whole place */
   object-fit: cover;
+  /*adding box shadow  */
   box-shadow: 0 4px 12px rgba(1, 10, 48, 0.15);
 }
 
 .upload-btn {
+  /* chosinghte backgroufn */
   background: rgb(1, 10, 48);
+  /* colour is being set as whiie */
   color: white;
+  /* adding no borders */
   border: none;
+  /* adding padding */
   padding: 12px 28px;
+  /*for rounded corners  */
+  
   border-radius: 8px;
+  
   cursor: pointer;
+  /* font size is ebing set to 1rem */
   font-size: 1rem;
+  /* how bold the font is */
   font-weight: 600;
+  /* diplayin infline flex */
   display: inline-flex;
+  /* making sure to align items in the center */
   align-items: center;
+  /*adding gap  */
   gap: 0.5rem;
 }
 
 .upload-btn:hover {
+  /* setting ht ebackground */
   background: #1a2a6c;
 }
 
 .upload-btn:active {
+  /*addingthe transofmr perorprty  */
   transform: scale(0.98);
 }
 
 #uploadImage {
+  /* displaying no flex */
   display: none;
 }
 
 /* Form Fields */
 .form-group {
+  /* adding margin at the bottom */
   margin-bottom: 1.5rem;
 }
 
 .form-group label {
+  /* displaying block */
   display: block;
+  /* makingthe text bolder */
   font-weight: 600;
+  /*choosing the colour  */
   color: rgb(1, 10, 48);
+  /*choosing the margin at the bottom  */
   margin-bottom: 0.5rem;
+  /*choosing font size  */
   font-size: 0.95rem;
+  /* transfomr property being used to mak the text uppercase */
   text-transform: uppercase;
+  /*changing letterspace  */
   letter-spacing: 0.5px;
 }
 
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
+  /*setting width to be 100 to takeover all available space  */
   width: 100%;
+  /* adding padding */
+  
   padding: 14px 18px;
-  border: 2px solid #e0e0e0;
+  /*adding border  */
+      border: 2px solid #e0e0e0;
+  /*adding border radius for rounded edges  */
   border-radius: 8px;
-  font-size: 1rem;
-  background: #f9f9f9;
+    /*adidng font size  */
+      font-size: 1rem;
+   /*chosing background colour  */
+      background: #f9f9f9;
+  /* adding box sizing */
   box-sizing: border-box;
 }
 
 .form-group input:focus {
-  background: white;
+  /*chosing background dolour as whiee  */
+      background: white;
+  /* border colur being set */
   border-color: rgb(1, 10, 48);
-  outline: none;
+      /*adding no outline  */
+        outline: none;
 }
 
 /* Button Container */
 .button-group {
-  display: flex;
-  gap: 1rem;
+  /* displaying flex */
+    display: flex;
+  /* adding gap */
+    gap: 1rem;
+  /* adding margin to the top */
   margin-top: 2.5rem;
-  flex-wrap: wrap;
+  /* a\using the flex wrap property */
+    flex-wrap: wrap;
 }
 
 /* Save Button */
 .btn1 {
-  background: #04AA6D;
-  color: white;
-  padding: 14px 28px;
+  /* adding backgground colour */
+    background: #04AA6D;
+  /* chosoing white */
+    color: white;
+  /* adding padding */
+      padding: 14px 28px;
+  /* adding no border */
   border: none;
+  /*adding border rdaisu for ouded edges  */
   border-radius: 8px;
+  
   cursor: pointer;
+  /* adding font size */
   font-size: 1rem;
+  /*choosing font weight  */
   font-weight: 600;
+  /*flex   */
   flex: 1;
+  /*choosing mi widht  */
   min-width: 200px;
 }
 
 .btn1:hover {
+  /*ading background colour  */
   background: #028f5c;
 }
 
 .btn1:active {
+  /* adding transfomr property */
   transform: scale(0.98);
 }
 
 /* Delete Button */
 .btn2 {
+  /* adding background colour */
   background: #f44336;
-  color: white;
-  padding: 14px 28px;
+  /*setting solour as whike  */
+    color: white;
+      /*adding padding  */
+    padding: 14px 28px;
+  /* no border and borerr radius for rounded corners */
   border: none;
+  
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
+  /* adding fornt size property */
+    font-size: 1rem;
+      /* changing font weight */
+      font-weight: 600;
+  /* a  dding flex */
   flex: 1;
+      /*setting min widht to be 200px  */
   min-width: 200px;
 }
 
 .btn2:hover {
+  /* adding background coloiur*/
   background: #d32f2f;
 }
 
 .btn2:active {
+  /* adding transfomr  property */
   transform: scale(0.98);
 }
 
 /* Divider */
 hr {
-  width: 100%;
+  /* max width possisble */
+    width: 100%;
+  /* adding no border */
   border: none;
-  border-top: 2px solid #e8eaf6;
+  /* adding brder tot eh top */
+    border-top: 2px solid #e8eaf6;
+  /*changing ht emargin to be 0  */
   margin: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .profileSettings {
+    /*adding padding  */
     padding: 1.5rem;
   }
 
   .profile-card {
+    /* padding beingg set */
     padding: 2rem 1.5rem;
   }
 
   .profile-pic-section img {
-    width: 120px;
+    /* setting both teh widtha nd height as 120px */
+      width: 120px;
     height: 120px;
   }
 
   .button-group {
+    /* choosing the flex direction which is column in this case */
     flex-direction: column;
   }
 
   .btn1,
   .btn2 {
-    width: 100%;
+    /*setting the width to take up the full size avaliable and not setting anyhting for the min widht  */
+      width: 100%;
     min-width: unset;
   }
 
   .profileSettings h1 {
-    font-size: 1.75rem;
+    /* chossoing the fontsie */
+      font-size: 1.75rem;
   }
 }
 
 @media (max-width: 480px) {
   .profileSettings {
-    padding: 1rem;
+    /*ading padding  */
+          padding: 1rem;
   }
 
   .profile-card {
-    padding: 1.5rem 1rem;
+    /* adding paadding */
+      padding: 1.5rem 1rem;
   }
 
   .profile-pic-section img {
-    width: 100px;
+    /*setting botht eh heihgt and hte width as 100px  */
+       width: 100px;
     height: 100px;
   }
 
   .upload-btn {
+    /*adding padding  */
     padding: 10px 20px;
+    /* chooing hte font size */
     font-size: 0.9rem;
   }
 
   .form-group input[type="text"],
   .form-group input[type="email"],
   .form-group input[type="password"] {
-    padding: 12px 14px;
+    /* adding padding */
+      padding: 12px 14px;
+
+    /* setting the font size */
     font-size: 0.95rem;
   }
 
   .btn1,
   .btn2 {
-    padding: 12px 24px;
+      /* adding padding */
+       padding: 12px 24px;
+    /* setting ethe font size */
     font-size: 0.95rem;
   }
+
 }

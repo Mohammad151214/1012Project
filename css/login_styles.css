@@ -10,13 +10,17 @@ body {
     /* setting the height */
   height: 100dvh;
         /*background images from the url  */
-      background-image: url(\../images/login_bg.jpg);
+
+  
+  background-image: url(\../images/login_bg.jpg);
         /*choosing background colour  */
     background-color: aliceblue;
 /* makit it so that it covers the whole page */
   background-size: cover;
 /*  centerin it */
-    background-position: center;
+  
+  
+  background-position: center;
     /* adding flex */
     display: flex;
       /* justifying content in the center */
@@ -30,13 +34,18 @@ body {
     width: 100dvw;
   /* setting the min width */
       min-height: 100dvh;
-    /* adding ht e[adding */
+  
+  
+  /* adding ht e[adding */
       padding: 1rem 0;
     /* chosig the backgroun colour */
       background-color: rgba(0, 0, 0, 0.6);
-    /* adding flex */
+  
+  /* adding flex */
     display: flex;
-      /*justifying content in the center  */
+  
+  
+  /*justifying content in the center  */
     justify-content: center;
     /*also aligning the items in ht ecenter  */
    align-items: center;
@@ -47,23 +56,29 @@ body {
       background-color: aliceblue;
   /*for rounded edges  */
     border-radius: 20px;
-   /*border being set as 2px  */
+
+  /*border being set as 2px  */
       border: solid 2px black;
     /* aligning text in the center */
     text-align: center;
-    /* setting hte max height */
+    
+  /* setting hte max height */
       max-height: calc(100dvh - 4rem);
          /*setting width as 85%  */
   width: 85%;
   /*   chhosing  */
-    max-width: 35rem;
+   
+  
+  max-width: 35rem;
   padding: 2rem;
     box-sizing: border-box;
 }
 
 .heading {
   /*   setting the font sixe */
-    font-size: clamp(2rem, 5vw, 3rem);
+ 
+  
+  font-size: clamp(2rem, 5vw, 3rem);
   /* adding amrgin to teh bottom */
       margin-bottom: 2rem;
 }
@@ -75,10 +90,14 @@ body {
 
 .login input {
   /* setting the width using 'clamp' */
-      width: clamp(200px, 80%, 400px);
+  
+  
+  width: clamp(200px, 80%, 400px);
     /*setting ht eborder reaius  */
    border-radius: 10px;
-      /* adding margin */
+    
+  
+  /* adding margin */
     
     margin: clamp(0.5rem, 1vw, 1.8rem) 0;
     /*addin padding and border  */
@@ -93,21 +112,31 @@ input::placeholder {
 
 #submit {
       /* setting the font size   */
-    font-size: 1.5rem;
+
+  
+  font-size: 1.5rem;
         /*adding amrgin ot the top  */
     margin-top: 2rem;
       /* settin width using clamp */
+'
+  
   width: clamp(120px, 40%, 180px);
       /*setting the min widht  */
       min-width: 6rem;
-    /*   chooisng backgroun collour */
+   
+  
+  /*   chooisng backgroun collour */
   background-color: #0088ff;
       /*color  */
       color: white;
   /* adding no borders */
-         border: none;
+
+  
+  border: none;
   /* adding border radius  */
     border-radius: 10px;
+
+  
   /*  adding padding*/
    padding: 0.8rem;
     
@@ -119,13 +148,17 @@ input::placeholder {
 #submit:hover {
   /* nbackgroun coloiur */
   background-color: #006fdd;
-   /* using transfomr propery  */
+
+  
+  /* using transfomr propery  */
   transform: scale(1.03);
 }
 
 .signup-text {
   /* adding margin to the top */
   margin-top: 1rem;
+  
+  
   /* setting font sixe */
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   color: #333;
@@ -133,8 +166,12 @@ input::placeholder {
 
 .signup-text a {
   /* choosing colour and text ecoration  */
+
+  
   color: #0088ff;
         text-decoration: none;
+  
+  
   /* adding font weight (boldness) */
       font-weight: 600;
   /* addin a transtiont */
@@ -142,6 +179,7 @@ input::placeholder {
 }
 
 .signup-text a:hover {
+
   /* choosoing colour and text decorations */
   color: #006fdd;
   text-decoration: underline;
@@ -158,7 +196,9 @@ input::placeholder {
   .login_container {
     /*setiting widht max width and padding  */
         width: 80%;
-              max-width: 26rem; 
+
+    
+    max-width: 26rem; 
         /* adding pafding */
     padding: 1.8rem;
   }
@@ -167,11 +207,14 @@ input::placeholder {
 /* Small tablets / large phones */
 @media (max-width: 768px) {
   :root {
+
     /* font size */
     font-size: 14px;
   }
   .login_container {
     /* making width = 90% */
+
+    
     width: 90%;
     /* max width = 24 rem and padding 1.5re, */
     max-width: 24rem;
@@ -195,9 +238,11 @@ input::placeholder {
   }
    .login_container {
     /* chooisn widht max widhta and padding */
-    width: 95%;
+    
+     width: 95%;
         max-width: 21.25rem;
-      padding: 1.2rem;
+     
+     padding: 1.2rem;
   }
     .heading {
     /* font size */
@@ -229,6 +274,7 @@ input::placeholder {
     width: 95%;
   }
 }
+
 
 
 

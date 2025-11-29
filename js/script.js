@@ -45,5 +45,46 @@ document.addEventListener('DOMContentLoaded', function() {
   document.body.appendChild(themeToggleBtn);
 });
 
-
-const searchbox = document.getElementById
+// AI Recipe Generation
+document.addEventListener('DOMContentLoaded', () => {
+  const aiButton = document.getElementById('ai');
+  
+  if (aiButton) {
+    aiButton.addEventListener('click', async (e) => {
+      e.preventDefault(); // Prevent form submission
+      
+      // Show loading message
+      aiButton.disabled = true;
+      aiButton.textContent = 'Generating...';
+      
+      try {
+        const response = await fetch('http://localhost:3000/api/generate-recipe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        if (!response.ok) {
+          throw new Error('Failed to generate recipe');
+        }
+        
+        const recipe = await response.json();
+        
+        // Fill in the form fields with the AI-generated recipe
+        document.getElementById('Recipe_title').value = recipe.title;
+        document.getElementById('Recipe_box').value = recipe.content;
+        
+        alert(`Recipe generated! (${recipe.cuisine} cuisine)\nYou can edit it before saving.`);
+        
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to generate recipe. Please try again.');
+      } finally {
+        // Re-enable button
+        aiButton.disabled = false;
+        aiButton.textContent = 'Inspire!';
+      }
+    });
+  }
+});

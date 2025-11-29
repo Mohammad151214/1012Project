@@ -68,5 +68,12 @@
     "content": "FVFVVFERV",
     "userId": 4,
     "createdAt": "2025-11-27T23:34:08.701Z"
+  },
+  {
+    "id": 11,
+    "title": "Tortilla de Patatas",
+    "content": "Ingredients:\n- Patatas\n- Huevos\n- Cebolla\n\nInstructions:\n1. Pelar y cortar las patatas y la cebolla en rodajas finas. Freírlas en abundante aceite de oliva a fuego medio hasta que estén tiernas. Escurrir bien el aceite.\n2. Batir los huevos con sal en un bol grande. Añadir las patatas y la cebolla escurridas a los huevos y mezclar todo suavemente.\n3. Calentar un poco de aceite en una sartén antiadherente. Verter la mezcla y cocinar a fuego medio-bajo, volteando la tortilla para que se dore por ambos lados y cuaje.",
+    "userId": 4,
+    "createdAt": "2025-11-29T21:27:03.266Z"
   }
 ]

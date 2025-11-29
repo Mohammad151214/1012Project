@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
+const { GoogleGenerativeAI } = require('@google/generative-ai');  // ⬅️ Fixed
+const genAI = new GoogleGenerativeAI('AIzaSyA0NKtbKJ2EB8EJzg23eGzi4X9VA3E3utg'); // ⬅️ Fixed
 
 const app = express();
 const PORT = 3000;
@@ -297,6 +299,65 @@ app.delete('/api/recipes/:id', async (req, res) => {
     res.json({ message: 'Recipe deleted', recipe: deletedRecipe });
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete recipe' });
+  }
+});
+
+// POST generate AI recipe with random cuisine
+app.post('/api/generate-recipe', async (req, res) => {
+  try {
+    const cuisines = ['Italian', 'Chinese', 'Mexican', 'Indian', 'Japanese', 
+                      'Thai', 'French', 'Greek', 'American', 'Korean', 
+                      'Vietnamese', 'Spanish', 'Middle Eastern', 'Caribbean'];
+    
+    const randomCuisine = cuisines[Math.floor(Math.random() * cuisines.length)];
+    
+    // Use gemini-pro (this is the correct free model name)
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+    
+    const prompt = `Generate a random ${randomCuisine} recipe. Format it exactly like this:
+
+Title: [Recipe Name]
+
+Ingredients:
+- ingredient 1
+- ingredient 2
+- ingredient 3
+
+Instructions:
+1. step 1
+2. step 2
+3. step 3
+
+Keep it simple, realistic, and easy to follow. Only provide the recipe, no extra commentary.`;
+    
+    // Generate content
+    const result = await model.generateContent(prompt);
+    const response = result.response;
+    const recipeText = response.text();
+    
+    // Parse the response
+    const titleMatch = recipeText.match(/Title:\s*(.+)/);
+    const title = titleMatch ? titleMatch[1].trim() : `${randomCuisine} Recipe`;
+    const content = recipeText.replace(/Title:\s*.+\n\n?/, '').trim();
+    
+    console.log('Recipe generated successfully:', title);
+    
+    res.json({
+      title: title,
+      content: content,
+      cuisine: randomCuisine
+    });
+    
+  } catch (error) {
+    console.error('Google AI Error Details:', {
+      message: error.message,
+      status: error.status,
+      statusText: error.statusText
+    });
+    res.status(500).json({ 
+      error: 'Failed to generate recipe with AI',
+      details: error.message 
+    });
   }
 });
 

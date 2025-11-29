@@ -3,94 +3,146 @@
 }
 
 body {
-  margin: 0;
+  /* adding margin as 0 */
+     margin: 0;
+    /* adding padding as 0 */
   padding: 0;
+    /* setting the height */
   height: 100dvh;
-  background-image: url(\../images/login_bg.jpg);
-  background-color: aliceblue;
+        /*background images from the url  */
+      background-image: url(\../images/login_bg.jpg);
+        /*choosing background colour  */
+    background-color: aliceblue;
+/* makit it so that it covers the whole page */
   background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/*  centerin it */
+    background-position: center;
+    /* adding flex */
+    display: flex;
+      /* justifying content in the center */
+   justify-content: center;
+  /* alining items int eh center */
+    align-items: center;
 }
 
 .overlay {
-  width: 100dvw;
-  min-height: 100dvh;
-  padding: 1rem 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* setting the widht */
+    width: 100dvw;
+  /* setting the min width */
+      min-height: 100dvh;
+    /* adding ht e[adding */
+      padding: 1rem 0;
+    /* chosig the backgroun colour */
+      background-color: rgba(0, 0, 0, 0.6);
+    /* adding flex */
+    display: flex;
+      /*justifying content in the center  */
+    justify-content: center;
+    /*also aligning the items in ht ecenter  */
+   align-items: center;
 }
 
 .login_container {
-  background-color: aliceblue;
-  border-radius: 20px;
-  border: solid 2px black;
-  text-align: center;
-  max-height: calc(100dvh - 4rem);
+    /*backgroun coloiur  */
+      background-color: aliceblue;
+  /*for rounded edges  */
+    border-radius: 20px;
+   /*border being set as 2px  */
+      border: solid 2px black;
+    /* aligning text in the center */
+    text-align: center;
+    /* setting hte max height */
+      max-height: calc(100dvh - 4rem);
+         /*setting width as 85%  */
   width: 85%;
-  max-width: 35rem;
+  /*   chhosing  */
+    max-width: 35rem;
   padding: 2rem;
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .heading {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 2rem;
+  /*   setting the font sixe */
+    font-size: clamp(2rem, 5vw, 3rem);
+  /* adding amrgin to teh bottom */
+      margin-bottom: 2rem;
 }
 
 .login {
+  /*settinntje font size  */
   font-size: 1.5rem;
 }
 
 .login input {
-  width: clamp(200px, 80%, 400px);
-  border-radius: 10px;
-  margin: clamp(0.5rem, 1vw, 1.8rem) 0;
-  padding: 0.7rem;
-  border: 2px solid black;
-}
+  /* setting the width using 'clamp' */
+      width: clamp(200px, 80%, 400px);
+    /*setting ht eborder reaius  */
+   border-radius: 10px;
+      /* adding margin */
+    
+    margin: clamp(0.5rem, 1vw, 1.8rem) 0;
+    /*addin padding and border  */
+        padding: 0.7rem;
+    border: 2px solid black;
+}  
 
 input::placeholder {
+  /* setting hte font size */
   font-size: 1.2rem;
 }
 
 #submit {
-  font-size: 1.5rem;
-  margin-top: 2rem;
+      /* setting the font size   */
+    font-size: 1.5rem;
+        /*adding amrgin ot the top  */
+    margin-top: 2rem;
+      /* settin width using clamp */
   width: clamp(120px, 40%, 180px);
-  min-width: 6rem;
+      /*setting the min widht  */
+      min-width: 6rem;
+    /*   chooisng backgroun collour */
   background-color: #0088ff;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 0.8rem;
+      /*color  */
+      color: white;
+  /* adding no borders */
+         border: none;
+  /* adding border radius  */
+    border-radius: 10px;
+  /*  adding padding*/
+   padding: 0.8rem;
+    
   cursor: pointer;
+  /* adding a transiton */
   transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 #submit:hover {
+  /* nbackgroun coloiur */
   background-color: #006fdd;
+   /* using transfomr propery  */
   transform: scale(1.03);
 }
 
 .signup-text {
+  /* adding margin to the top */
   margin-top: 1rem;
+  /* setting font sixe */
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   color: #333;
 }
 
 .signup-text a {
+  /* choosing colour and text ecoration  */
   color: #0088ff;
-  text-decoration: none;
-  font-weight: 600;
+        text-decoration: none;
+  /* adding font weight (boldness) */
+      font-weight: 600;
+  /* addin a transtiont */
   transition: color 0.3s ease;
 }
 
 .signup-text a:hover {
+  /* choosoing colour and text decorations */
   color: #006fdd;
   text-decoration: underline;
 }
@@ -100,11 +152,14 @@ input::placeholder {
 /* Medium screens (tablets / small laptops) */
 @media (max-width: 1024px) {
   :root {
-    font-size: 15px;
+     /* font size */
+        font-size: 15px;
   }
   .login_container {
-    width: 80%;
-    max-width: 26rem; /* 416px */
+    /*setiting widht max width and padding  */
+        width: 80%;
+              max-width: 26rem; 
+        /* adding pafding */
     padding: 1.8rem;
   }
 }
@@ -112,54 +167,68 @@ input::placeholder {
 /* Small tablets / large phones */
 @media (max-width: 768px) {
   :root {
+    /* font size */
     font-size: 14px;
   }
   .login_container {
+    /* making width = 90% */
     width: 90%;
-    max-width: 24rem; /* 384px */
-    padding: 1.5rem;
+    /* max width = 24 rem and padding 1.5re, */
+    max-width: 24rem;
+        padding: 1.5rem;
   }
   .login input {
+    /* width = 90% */
     width: 90%;
   }
   #submit {
-    width: 60%;
+        /* width = 90% */
+        width: 60%;
   }
 }
 
 /* Small phones */
 @media (max-width: 480px) {
   :root {
-    font-size: 13px;
+    /*choosing font size  */
+        font-size: 13px;
   }
-  .login_container {
+   .login_container {
+    /* chooisn widht max widhta and padding */
     width: 95%;
-    max-width: 21.25rem; /* 340px */
-    padding: 1.2rem;
+        max-width: 21.25rem;
+      padding: 1.2rem;
   }
-  .heading {
-    font-size: 2rem;
+    .heading {
+    /* font size */
+          font-size: 2rem;
   }
-  .login input {
-    font-size: 0.95rem;
+     .login input {
+  /* font size */
+      font-size: 0.95rem;
   }
-  .signup-text {
-    font-size: 0.9rem;
+     .signup-text {
+    /* font size */
+      font-size: 0.9rem;
   }
   #submit {
+  /* setting hte width to be 70% and max width to be 6.25 */
     width: 70%;
-    min-width: 6.25rem; /* 100px */
+      min-width: 6.25rem; 
   }
 }
 
 /* Extra small screens */
 @media (max-width: 360px) {
   :root {
-    font-size: 12px;
+    /* font sixe */
+      font-size: 12px;
   }
   .login_container {
+    /*widht  */
     width: 95%;
   }
 }
+
 
 

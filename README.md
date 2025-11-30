@@ -16,6 +16,7 @@ vitest
 js library to convert JSON to pdf
 Gemini API
 
+localStorage used for session managemnt
 
 AI generated code has comments signalling which parts were AI
 The tests are signalled in JS

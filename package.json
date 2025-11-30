@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Project for EECS 1012.",
   "main": "server/server.js",
+  "type": "module",
   "scripts": {
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
@@ -15,7 +16,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Mohammad151214/1012Project/issues"
   },

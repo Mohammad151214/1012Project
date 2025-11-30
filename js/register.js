@@ -1,3 +1,4 @@
+import { validatePassword, validateEmail } from "./validation.js";
 document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.querySelector(".login"); // signup button
   signupForm.addEventListener("submit", async (e) => {
@@ -6,9 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("pwd").value;
-    // Basic password strength check
-    if (password.length < 8 || password.length > 15) {
-      alert("Password must be between 8-15 characters long");
+    // Email validation using function in validation.js
+    const emailValidation = validateEmail(email);
+    if (!emailValidation.valid) {
+      alert(emailValidation.message);
+      return;
+    }
+    // Password validation using function in validation.js
+    const passwordValidation = validatePassword(password);
+    if (!passwordValidation.valid) {
+      alert(passwordValidation.message);
       return;
     }
     try {

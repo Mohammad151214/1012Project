@@ -8,8 +8,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai"); // ⬅️ Fixed
 const genAI = new GoogleGenerativeAI("AIzaSyA0NKtbKJ2EB8EJzg23eGzi4X9VA3E3utg"); // ⬅️ Fixed
 const app = express();
 const PORT = 3000;
-const USERS_FILE = path.join(__dirname, "..", "data", "users.json");
-const RECIPES_FILE = path.join(__dirname, "..", "data", "recipes.json");
+const USERS_FILE = path.join(__dirname, "..", "data", "users.json"); // JSON file for users
+const RECIPES_FILE = path.join(__dirname, "..", "data", "recipes.json"); // JSON file for recipes
 
 // Middleware
 app.use(express.json());

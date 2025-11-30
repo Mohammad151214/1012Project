@@ -1,30 +1,52 @@
 <!DOCTYPE html>
+<!--setting language english  -->
 <html lang="en">
+  
   <head>
+    <!--setting encoding to utf-8  -->
     <meta charset="UTF-8" />
+    <!--making page responsive on mobile devices  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- linking css files  -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/login_styles.css" />
     <script type="module" src="js/register.js" defer></script>
+    <!--title  -->
     <title>Create an account</title>
   </head>
   <body>
+    <!--section wiht bg styling   -->
     <section class="bg-image">
+      <!-- we used this to style the background  -->
       <div class="overlay">
+        <!-- container for registration form that we added  -->
         <div class="login_container">
+          <!--  heading for hte registration page that we made -->
           <h2 class="heading">Sign Up</h2>
+          <!--mkin a form  -->
           <form class="login">
+            <!-- making a lable for the username  -->
             <label for="name">Userame</label><br />
+            <!-- text input for user name  -->
             <input type="text" id="name" name="name" placeholder="Full Name"/><br />
+            <!--  makinga lable for the email -->
             <label for="email">Email</label><br />
+            <!-- for hte user to enter their enail  -->
             <input type="email" id="email" name="email" placeholder="Email"/><br />
+            <!--;abel for the passwoard  -->
             <label for="pwd">Password</label><br />
+            <!-- passoward input field with conditions -->
             <input type="password" id="pwd" name="pwd" placeholder="Password (8-15 characters)"/><br />
+          <!--submit button that we created for the registration form  -->
             <input type="submit" id="submit" value="Register">
+            <!-- clsoing form  -->
           </form>
+           <!-- pargraph witth login prompt and link that takes u to the login page -->
           <p class="signup-text">Already have an account? <a href="login.html">Login</a> instead.</p>
+        <!-- closing containers  -->
         </div>
       </div>
     </section>
   </body>
 </html>
+

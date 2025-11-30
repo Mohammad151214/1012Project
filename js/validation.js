@@ -1,5 +1,7 @@
 // js/validation.js
-// Validation functions extracted from your existing code
+// Validation functions used in other files
+// Separate file for modularity and because tests created later
+// AI helped in creation coz I had used in line conditional statements and then had to export them and make them modular
 
 /**
  * Validates password strength (from register.js)

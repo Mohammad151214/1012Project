@@ -1,35 +1,32 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const loginForm = document.querySelector('.login');
-  
-  loginForm.addEventListener('submit', async (e) => {
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.querySelector(".login"); // Login Button
+  loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
-    const email = document.getElementById('username').value;
-    const password = document.getElementById('pwd').value;
-    
+    const email = document.getElementById("username").value;
+    const password = document.getElementById("pwd").value;
     try {
-      const response = await fetch('http://localhost:3000/api/login', {
-        method: 'POST',
+      // Exception handling
+      const response = await fetch("http://localhost:3000/api/login", {
+        // Login function
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
-      
       const data = await response.json();
-      
       if (response.ok) {
-        alert('Login successful!');
+        alert("Login successful!");
         // Store user data in localStorage
-        localStorage.setItem('user', JSON.stringify(data.user));
+        localStorage.setItem("user", JSON.stringify(data.user));
         // Redirect to dashboard or home page
-        window.location.href = 'dashboard.html';
+        window.location.href = "dashboard.html"; // Redirect
       } else {
-        alert(data.error || 'Login failed');
+        alert(data.error || "Login failed");
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred during login');
+      console.error("Error:", error);
+      alert("An error occurred during login");
     }
   });
 });

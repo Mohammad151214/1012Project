@@ -1,9 +1,11 @@
+// Backend/server file
+// AI mostly helped with this file
+// Using express and other libraries
 const express = require("express");
 const fs = require("fs").promises;
 const path = require("path");
 const { GoogleGenerativeAI } = require("@google/generative-ai"); // ⬅️ Fixed
 const genAI = new GoogleGenerativeAI("AIzaSyA0NKtbKJ2EB8EJzg23eGzi4X9VA3E3utg"); // ⬅️ Fixed
-
 const app = express();
 const PORT = 3000;
 const USERS_FILE = path.join(__dirname, "..", "data", "users.json");
@@ -118,7 +120,7 @@ app.put("/api/users/:id", async (req, res) => {
     users[index].updatedAt = new Date().toISOString();
 
     await writeData(USERS_FILE, users);
-    
+
     // don't send password back
     const { password: _, ...userWithoutPassword } = users[index];
     res.json(userWithoutPassword);
@@ -389,20 +391,6 @@ Keep it simple, realistic, and easy to follow. Only provide the recipe, no extra
   }
 });
 
-// Serve static files (CSS, JS, images, etc.)
-app.use(express.static(path.join(__dirname, "..")));
-
-// Serve login page as default for root path
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "login.html"));
-});
-
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:3000`);
-  console.log(`Users file: ${USERS_FILE}`);
-  console.log(`Recipes file: ${RECIPES_FILE}`);
-});
 // PUT update recipe
 app.put("/api/recipes/:id", async (req, res) => {
   try {
@@ -428,4 +416,19 @@ app.put("/api/recipes/:id", async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to update recipe" });
   }
+});
+
+// Serve static files (CSS, JS, images, etc.)
+app.use(express.static(path.join(__dirname, "..")));
+
+// Serve login page as default for root path
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "login.html"));
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:3000`);
+  console.log(`Users file: ${USERS_FILE}`);
+  console.log(`Recipes file: ${RECIPES_FILE}`);
 });

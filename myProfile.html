@@ -1,18 +1,26 @@
 <!DOCTYPE html>
+<!-- setting langauge to english -->
 <html lang="en">
   <head>
+    <!--using utf-8 encoding  -->
     <meta charset="UTF-8" />
+    <!-- for mobile phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--title  -->
     <title>Recipe Vault - My Profile</title>
+    <!--if satemtnat  -->
     <script>
       if (!localStorage.getItem("user")) {
         window.location.href = "login.html";
       }
     </script>
+    <!--getting icons from fontawesome  -->
     <script
       src="https://kit.fontawesome.com/c13af7bb57.js"
       crossorigin="anonymous"
+      
     ></script>
+    <!-- linking js and css  -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/profile.css" />
     <link rel="stylesheet" type="text/css" href="css/theme.css" />
@@ -20,60 +28,86 @@
     <script src="js/profile.js" defer></script>
   </head>
   <body>
+    <!--making some containers for nav bar  -->
     <div class="sidebar">
       <div class="top">
         <div class="logo">
+          <!--icon  -->
           <i class="fa-solid fa-user"></i>
+          <!--titile  -->
           <span class="title">Recipe Vault</span>
         </div>
+          <!--another icon  -->
         <i class="fa-solid fa-bars" id="menubtn"></i>
       </div>
+      <!--section for use info  -->
       <div class="user">
+         <!-- using iamge -->
         <img src="images/user.png" alt="user" class="user-img" />
         <div>
+           <!--lable for username  -->
           <p class="bold">Username</p>
           <p>Admin</p>
         </div>
       </div>
+        <!--unordered list  -->
       <ul>
         <li>
+          <!--link to profile apge  -->
           <a href="myProfile.html">
+            <!--icon  -->
             <i class="fa-solid fa-user"></i>
+            <!-- profile link text -->
             <span class="nav-item">Profile</span>
           </a>
+          <!-- this is a tooltip taht apperas when someone hoevers -->
           <span class="tooltip">Profile</span>
         </li>
       </ul>
+           <!--unordered list  -->
       <ul>
         <li>
+           <!--link to dahsbard.html  -->
           <a href="dashboard.html">
+            <!--icon  -->
             <i class="fa-solid fa-bookmark"></i>
+                      <!--recipe link text  -->
             <span class="nav-item">Recipes</span>
           </a>
+          <!--tootlip taht apperas on hovr  -->
           <span class="tooltip">Recipes</span>
         </li>
+        <!--unorederd list  -->
       </ul>
       <ul>
         <li>
+          <!-- link to add recipe page  -->
           <a href="addRecipe.html">
+               <!--icon  -->
             <i class="fa-regular fa-square-plus"></i>
             <span class="nav-item">Add Recipe</span>
           </a>
+          <!--tooltip taht appears on hover  -->
           <span class="tooltip">Add Recipe</span>
         </li>
       </ul>
       <ul>
         <li>
+          <!--for the purpose of loggin out  -->
           <a href="#" onclick="logout();return false;">
+              <!--icon  -->
             <i class="fa-solid fa-right-from-bracket"></i>
+            <!--text for logout  -->
             <span class="nav-item">Logout</span>
           </a>
+            <!--tooltip taht appears on hover  -->
           <span class="tooltip">Logout</span>
         </li>
       </ul>
     </div>
-
+<!--main content of the pgae  -->
     <div class="main-content">
+      <!--class  -->
       <div class="profileSettings">
         <h1>My Profile</h1>
 
@@ -88,8 +122,11 @@
                   alt="Profile Picture"
                 />
               </div>
+              <!-- for uploading images  -->
               <input type="file" id="uploadImage" accept="image/*" />
+              <!--lable  -->
               <label for="uploadImage" class="upload-btn">
+                <!--icon  -->
                 <i class="fa-solid fa-camera"></i>
                 Change Profile Picture
               </label>
@@ -149,3 +186,4 @@
     </script>
   </body>
 </html>
+

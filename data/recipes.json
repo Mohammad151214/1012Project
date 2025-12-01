@@ -74,5 +74,13 @@
     "category": "dinner",
     "userId": 4,
     "createdAt": "2025-12-01T01:13:19.519Z"
+  },
+  {
+    "id": 11,
+    "title": "Sweet Fried Plantains",
+    "content": "Ingredients:<br>- Fresh green beans (300g)<br>- Garlic (3 cloves)<br>- Soy sauce (1 tbsp)<br>- Vegetable oil (1 tbsp)<br><br>Instructions:<br>1. Trim the ends off the green beans. Mince the garlic cloves.<br>2. Heat vegetable oil in a wok or large pan over medium-high heat. Add minced garlic and stir-fry for 30 seconds until fragrant.<br>3. Add green beans and stir-fry for 5-7 minutes until tender-crisp, stirring occasionally.<br>4. Drizzle with soy sauce, toss well to coat, and serve immediately.",
+    "category": "lunch",
+    "userId": 4,
+    "createdAt": "2025-12-01T01:53:47.714Z"
   }
 ]

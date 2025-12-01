@@ -1,3 +1,5 @@
+import { validatePassword, validateEmail } from "./validation.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   const user = JSON.parse(localStorage.getItem("user")); // Getting user details
   if (!user) {
@@ -52,21 +54,23 @@ async function handleSubmit(e) {
     showMessage("Please enter a username", "error");
     return;
   }
-  if (!email) {
-    showMessage("Please enter an email", "error");
+  const emailValidation = validateEmail(email);
+  if (!emailValidation.valid) {
+    showMessage(emailValidation.message, "error");
     return;
   }
-  // basic email check
-  if (!email.includes("@") || !email.includes(".")) {
-    showMessage("Please enter a valid email", "error");
-    return;
-  }
+  
   const updateData = {
-    // Updating data in JSON
     name: username,
     email: email,
   };
+  
   if (password) {
+    const passwordValidation = validatePassword(password);
+    if (!passwordValidation.valid) {
+      showMessage(passwordValidation.message, "error");
+      return;
+    }
     updateData.password = password;
   }
   const submitBtn = e.target.querySelector('button[type="submit"]');

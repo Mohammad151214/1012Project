@@ -4,8 +4,8 @@
 const express = require("express");
 const fs = require("fs").promises;
 const path = require("path");
-const { GoogleGenerativeAI } = require("@google/generative-ai"); // ⬅️ Fixed
-const genAI = new GoogleGenerativeAI("AIzaSyA0NKtbKJ2EB8EJzg23eGzi4X9VA3E3utg"); // ⬅️ Fixed
+const { GoogleGenerativeAI } = require("@google/generative-ai"); // 
+const genAI = new GoogleGenerativeAI("AIzaSyAFalRtNSP1ZuvUsyJw3f78-fou8BPIn4I"); // 
 const app = express();
 const PORT = 3000;
 const USERS_FILE = path.join(__dirname, "..", "data", "users.json"); // JSON file for users
@@ -29,6 +29,9 @@ async function readData(filePath) {
     return data.trim() ? JSON.parse(data) : [];
   } catch (error) {
     if (error.code === "ENOENT") {
+      return [];
+    }
+    if (error instanceof SyntaxError) {
       return [];
     }
     throw error;
@@ -272,32 +275,6 @@ app.post("/api/recipes", async (req, res) => {
     res.status(201).json(newRecipe);
   } catch (error) {
     res.status(500).json({ error: "Failed to create recipe" });
-  }
-});
-
-// PUT update recipe
-app.put("/api/recipes/:id", async (req, res) => {
-  try {
-    const recipes = await readData(RECIPES_FILE);
-    const index = recipes.findIndex((r) => r.id === parseInt(req.params.id));
-
-    if (index === -1) {
-      return res.status(404).json({ error: "Recipe not found" });
-    }
-
-    const { title, content } = req.body;
-
-    recipes[index] = {
-      ...recipes[index],
-      title: title || recipes[index].title,
-      content: content || recipes[index].content,
-      updatedAt: new Date().toISOString(),
-    };
-
-    await writeData(RECIPES_FILE, recipes);
-    res.json(recipes[index]);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to update recipe" });
   }
 });
 

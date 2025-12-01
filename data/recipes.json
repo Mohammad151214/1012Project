@@ -1,11 +1,78 @@
 [
   {
     "id": 1,
-    "title": "Đậu Phụ Sốt Cà Chua (Tofu in Tomato Sauce)",
-    "content": "Ingredients:<br>- 300g spaghetti<br>- 4 cloves garlic<br>- 60ml extra virgin olive oil<br><br>Instructions:<br>1. Cook spaghetti in a large pot of salted boiling water according to package directions until al dente. Reserve about 1/2 cup of pasta water before draining.<br>2. While pasta cooks, thinly slice the garlic. Heat the olive oil in a large pan over medium-low heat. Add the sliced garlic and cook gently until fragrant and lightly golden, being careful not to burn it.<br>3. Add the drained spaghetti to the pan with the garlic and oil. Toss well, adding a splash of reserved pasta water if needed to create a light sauce. Season with salt and black pepper to taste and serve immediately.",
-    "category": "other",
+    "title": "Tartine Jambon Fromage",
+    "content": "Ingredients:<br>- 2 tranches de pain de campagne<br>- 2 tranches de jambon blanc<br>- 50g de fromage râpé (Comté ou Emmental)<br><br>Instructions:<br>1. Préchauffer le four à 180°C (350°F).<br>2. Placer le jambon sur chaque tranche de pain, puis recouvrir généreusement de fromage râpé.<br>3. Enfourner pour 5-7 minutes, jusqu'à ce que le fromage soit fondu et légèrement doré. Servir chaud.",
+    "category": "breakfast",
     "userId": 4,
-    "createdAt": "2025-11-29T22:50:25.370Z",
-    "updatedAt": "2025-11-29T22:55:50.102Z"
+    "createdAt": "2025-12-01T00:48:50.320Z",
+    "updatedAt": "2025-12-01T01:26:30.802Z"
+  },
+  {
+    "id": 2,
+    "title": "Simple Dal Tadka",
+    "content": "Ingredients:<br>- 3 patatas medianas<br>- 4 huevos grandes<br>- 1 cebolla pequeña (opcional)<br>- Aceite de oliva virgen extra<br>- Sal al gusto<br><br>Instructions:<br>1. Pelar las patatas y la cebolla (si se usa). Cortar las patatas en rodajas finas y la cebolla en juliana.<br>2. Calentar abundante aceite de oliva en una sartén a fuego medio. Añadir las patatas y la cebolla. Cocinar a fuego lento, removiendo ocasionalmente, hasta que las patatas estén tiernas. Escurrir bien el exceso de aceite.<br>3. En un bol grande, batir los huevos con una pizca de sal. Añadir las patatas y la cebolla escurridas y mezclar. Verter la mezcla en una sartén antiadherente con un poco de aceite caliente. Cocinar a fuego medio-bajo hasta que los bordes estén cuajados. Con la ayuda de un plato, dar la vuelta a la tortilla y cocinar por el otro lado hasta que esté dorada.",
+    "category": "vegan",
+    "userId": 4,
+    "createdAt": "2025-12-01T00:49:43.228Z",
+    "updatedAt": "2025-12-01T01:26:43.153Z"
+  },
+  {
+    "id": 3,
+    "title": "Pimientos de Padrón",
+    "content": "Ingredients:<br>- 1 bunch morning glory (rau muống)<br>- 4-5 cloves garlic<br>- 1 tablespoon fish sauce<br>- 1 teaspoon sugar<br>- 2 tablespoons cooking oil<br><br>Instructions:<br>1. Wash the morning glory thoroughly, trim off the tough ends, and cut the stems and leaves into 2-inch pieces.<br>2. Peel and finely mince the garlic cloves.<br>3. Heat cooking oil in a large wok or pan over medium-high heat until shimmering.<br>4. Add the minced garlic and stir-fry quickly until fragrant, about 30 seconds.<br>5. Add the prepared morning glory to the wok. Stir-fry vigorously for 2-3 minutes until it starts to wilt.<br>6. Season with fish sauce and sugar. Continue to stir-fry for another minute until the morning glory is tender-crisp.<br>7. Serve hot immediately, typically with steamed rice.",
+    "category": "lunch",
+    "userId": 4,
+    "createdAt": "2025-12-01T00:50:16.085Z",
+    "updatedAt": "2025-12-01T01:26:52.238Z"
+  },
+  {
+    "id": 4,
+    "title": "Kai Jeow Moo Sab",
+    "content": "Ingredients:<br>- 200g block of feta cheese<br>- 1 large ripe tomato<br>- 2 tablespoons olive oil<br><br>Instructions:<br>1. Preheat oven to 200°C (390°F). Place the feta cheese in a small oven-safe dish.<br>2. Slice the tomato and arrange the slices around the feta. Drizzle generously with olive oil.<br>3. Bake for 15-20 minutes, or until the feta is soft and slightly golden and the tomatoes are tender.",
+    "category": "dessert",
+    "userId": 4,
+    "createdAt": "2025-12-01T00:51:30.755Z"
+  },
+  {
+    "id": 6,
+    "title": "김치볶음밥 (Kimchi Bokkeumbap)",
+    "content": "Ingredients:<br>- 2 cups cooked rice<br>- 1 cup chopped kimchi<br>- 1 tbsp cooking oil<br><br>Instructions:<br>1. Heat cooking oil in a pan over medium heat. Add chopped kimchi and stir-fry for 2 minutes.<br>2. Add cooked rice to the pan and mix thoroughly with the kimchi. Continue stir-frying for 3-4 minutes, breaking up any rice clumps.<br>3. Serve immediately.",
+    "category": "dinner",
+    "userId": 4,
+    "createdAt": "2025-12-01T00:52:00.551Z",
+    "updatedAt": "2025-12-01T01:27:00.618Z"
+  },
+  {
+    "id": 7,
+    "title": "Simple Egg Donburi",
+    "content": "Ingredients:<br>- 1 cup elbow macaroni<br>- 2 cups water<br>- 1/2 teaspoon salt<br>- 1/2 cup milk<br>- 1 cup shredded cheddar cheese<br><br>Instructions:<br>1. Combine macaroni, water, and salt in a medium skillet. Bring to a boil, then reduce heat and simmer for 8-10 minutes, or until water is mostly absorbed and macaroni is tender.<br>2. Stir in the milk and shredded cheddar cheese until the cheese is melted and a creamy sauce forms.<br>3. Serve hot.",
+    "category": "breakfast",
+    "userId": 4,
+    "createdAt": "2025-12-01T01:01:26.607Z"
+  },
+  {
+    "id": 8,
+    "title": "Pad Pak Ruam Mit Tao Huu",
+    "content": "<b>Ingredients:</b><br>- 1 block (200g) feta cheese<br>- 1 large tomato<br>- 2 tablespoons extra virgin olive oil<br><b><br>Instructions:</b><br>1. Preheat oven to 200°C (400°F). Slice the tomato and place it around and on top of the feta in a small oven-safe dish.<br>2. Drizzle the olive oil over the feta and tomatoes. Sprinkle with 1/2 teaspoon dried oregano and a pinch of black pepper.<br>3. Bake for 15-20 minutes, or until the feta is soft and slightly golden. Serve immediately.",
+    "category": "breakfast",
+    "userId": 4,
+    "createdAt": "2025-12-01T01:10:31.190Z"
+  },
+  {
+    "id": 9,
+    "title": "Penne al Pomodoro e Basilico Fresco",
+    "content": "Ingredients:<br>- 320g penne pasta<br>- 500g ripe cherry tomatoes<br>- 2 cloves garlic<br>- A large handful of fresh basil leaves<br>- 4 tablespoons extra virgin olive oil<br>- Salt and black pepper to taste<br><br>Instructions:<br>1. Cook the penne pasta according to package directions until al dente. Drain, reserving about half a cup of the pasta water.<br>2. While the pasta cooks, halve the cherry tomatoes and thinly slice the garlic cloves.<br>3. In a large pan, heat the olive oil over medium heat. Add the sliced garlic and cook for 1-2 minutes until fragrant, being careful not to burn it. Add the halved cherry tomatoes, a pinch of salt, and a splash of reserved pasta water. Cook for 5-7 minutes until the tomatoes soften and release their juices.<br>4. Add the drained pasta to the pan with the tomatoes. Toss well. Tear the fresh basil leaves and add them to the pasta. Season with black pepper and adjust salt if needed. Toss again and serve immediately.",
+    "category": "vegetarian",
+    "userId": 4,
+    "createdAt": "2025-12-01T01:12:58.494Z"
+  },
+  {
+    "id": 10,
+    "title": "Spaghetti al Limone Semplice",
+    "content": "Ingredients:<br>- 320g spaghetti<br>- 2 lemons (zest and juice)<br>- 2 cloves garlic, minced<br>- 60ml extra virgin olive oil<br>- Salt to taste<br>- Freshly ground black pepper<br>- A handful of fresh parsley, chopped<br><br>Instructions:<br>1. Cook the spaghetti according to package directions in a large pot of salted water until al dente. Reserve about 1/2 cup of pasta water before draining.<br>2. While the pasta cooks, heat the olive oil in a large skillet over medium-low heat. Add the minced garlic and cook gently for 1-2 minutes until fragrant, being careful not to brown it.<br>3. Add the lemon zest and lemon juice to the skillet. Season with salt and pepper. Stir well.<br>4. Drain the cooked spaghetti and add it directly to the skillet with the lemon sauce.<br>5. Toss the spaghetti to coat, adding a splash of the reserved pasta water as needed to create a light, creamy sauce.<br>6. Stir in the chopped fresh parsley. Serve immediately.",
+    "category": "dinner",
+    "userId": 4,
+    "createdAt": "2025-12-01T01:13:19.519Z"
   }
 ]

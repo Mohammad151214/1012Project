@@ -52,50 +52,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  // Form submission on ADD recipe page
-  if (addRecipeForm && window.location.pathname.includes("addRecipe.html")) {
-    addRecipeForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const title = document.getElementById("Recipe_title").value;
-      const contentDiv = document.getElementById("Recipe_box");
-      const content = contentDiv.innerHTML || contentDiv.textContent; // Works for either type of html box
-      if (!title || !content) {
-        // Form vaidation
-        alert("Please fill in all fields");
-        return;
-      }
-      try {
-        // Storing with exception handling in JSON file recipes.json
-        const response = await fetch("http://localhost:3000/api/recipes", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            // Creating JSON string
-            title,
-            content,
-            userId: JSON.parse(localStorage.getItem("user")).id, // Adding user id to storage
-          }),
-        });
-        const data = await response.json();
-        if (response.ok) {
-          alert("Recipe added successfully!"); // Alert popup
-          document.getElementById("Recipe_title").value = "";
-          contentDiv.innerHTML = "";
-          window.location.href = "dashboard.html"; // If succesful redirect to dashboard
-        } else {
-          alert(data.error || "Failed to add recipe"); // Error
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        alert("An error occurred while adding recipe");
-      }
-    });
-  }
   // Load recipes on dashboard
   if (window.location.pathname.includes("dashboard.html")) {
     loadRecipes();
+    const searchBtn = document.getElementById("searchBtn");
+    if (searchBtn) {
+      searchBtn.addEventListener("click", applySearch);
+    }
+    const sortBtn = document.getElementById("sortBtn");
+    if (sortBtn) {
+      sortBtn.addEventListener("click", applySort);
+    }
+    const resetBtn = document.getElementById("resetBtn");
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        resetToDefault();
+      });
+    }
   }
   // Check if we're on the edit recipe page
   if (window.location.pathname.includes("editRecipe.html")) {
@@ -128,7 +103,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-// Load recipes on dashboard
+let allUserRecipes = [];
+let currentFiltered = [];
+
+function resetToDefault() {
+  const searchBox = document.getElementById("searchbox");
+  if (searchBox) {
+    searchBox.value = "";
+  }
+  
+  const filterDropdown = document.getElementById("categoryFilter");
+  if (filterDropdown) {
+    filterDropdown.value = "all";
+  }
+  
+  if (allUserRecipes.length === 0) {
+    loadRecipes();
+  } else {
+    currentFiltered = [...allUserRecipes];
+    displayRecipes(currentFiltered);
+  }
+}
+
 async function loadRecipes() {
   try {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -137,36 +133,70 @@ async function loadRecipes() {
       throw new Error("Failed to load recipes");
     }
     const recipes = await response.json();
-    let userRecipes = recipes.filter((r) => r.userId === user.id);
-    // check if there's a filter selected
-    const filterDropdown = document.getElementById("categoryFilter");
-    if (filterDropdown && filterDropdown.value !== "all") {
-      // filter by category
-      userRecipes = userRecipes.filter(
-        (r) => r.category === filterDropdown.value
-      );
-    }
-    displayRecipes(userRecipes);
+    allUserRecipes = recipes.filter((r) => r.userId === user.id);
+    currentFiltered = [...allUserRecipes];
+    displayRecipes(currentFiltered);
   } catch (error) {
     console.error("Error loading recipes:", error);
   }
 }
+
+function applySearch() {
+  currentFiltered = [...allUserRecipes];
+  
+  const searchBox = document.getElementById("searchbox");
+  if (searchBox && searchBox.value.trim()) {
+    const searchTerm = searchBox.value.toLowerCase();
+    currentFiltered = currentFiltered.filter((r) => {
+      const title = (r.title || "").toLowerCase();
+      return title.includes(searchTerm);
+    });
+  }
+  
+  displayRecipes(currentFiltered);
+}
+
+function applySort() {
+  currentFiltered = [...allUserRecipes];
+  
+  const filterDropdown = document.getElementById("categoryFilter");
+  if (filterDropdown && filterDropdown.value !== "all") {
+    currentFiltered = currentFiltered.filter((r) => r.category === filterDropdown.value);
+  }
+  
+  displayRecipes(currentFiltered);
+}
+
+function getCategoryColor(category) {
+  const colors = {
+    breakfast: "#FFA500",
+    lunch: "#4CAF50",
+    dinner: "#2196F3",
+    dessert: "#E91E63",
+    snack: "#9C27B0",
+    vegan: "#00BCD4",
+    vegetarian: "#8BC34A",
+    other: "#757575"
+  };
+  return colors[category] || colors.other;
+}
+
 // Display Cards- Dynamically display recipes AI helped
 function displayRecipes(recipes) {
   const mainContent = document.querySelector(".main-content");
-  // Remove default "no recipes" card if other recipes exist
-  const defaultCard = mainContent.querySelector(".recipe-card");
-  if (defaultCard) {
-    defaultCard.remove();
-  } // Dynamically create cards for recipes
+  if (!mainContent) return;
+  
+  const existingCards = mainContent.querySelectorAll(".recipe-card");
+  existingCards.forEach(card => card.remove());
+  
   if (recipes.length === 0) {
     const noRecipeCard = document.createElement("div");
     noRecipeCard.className = "recipe-card";
     noRecipeCard.innerHTML = `
       <div class="recipe-img"></div>
       <div class="recipe-info">
-        <h3>No recipes yet</h3>
-        <p>Add your first recipe to get started!</p>
+        <h3>No recipes found</h3>
+        <p>Try adjusting your search or filter criteria.</p>
       </div>
     `;
     mainContent.appendChild(noRecipeCard);
@@ -175,18 +205,18 @@ function displayRecipes(recipes) {
   recipes.forEach((recipe) => {
     const card = document.createElement("div");
     card.className = "recipe-card";
-    // make a category badge
     let categoryBadge = "";
     if (recipe.category) {
-      categoryBadge = `<span style="display: inline-block; background: #04AA6D; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px;">${recipe.category}</span>`;
+      const categoryColor = getCategoryColor(recipe.category);
+      const categoryName = recipe.category.charAt(0).toUpperCase() + recipe.category.slice(1);
+      categoryBadge = `<span style="display: inline-block; background: ${categoryColor}; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px;">${categoryName}</span>`;
     }
     card.innerHTML = `
-      <div class="recipe-img"></div>
       <div class="recipe-info">
         <h3>${recipe.title}</h3>
         <div>${categoryBadge}</div>
-        <p>${recipe.content.substring(0, 100).replace(/<[^>]*>/g, "")}${
-      recipe.content.length > 100 ? "..." : ""
+        <p>${recipe.content.substring(0, 400).replace(/<[^>]*>/g, "")}${
+      recipe.content.length > 400 ? "..." : ""
     }</p>
         <div style="margin-top: 10px; display: flex; gap: 5px; flex-wrap: wrap;">
           <button onclick="editRecipe(${
@@ -400,15 +430,4 @@ if (addRecipeForm && window.location.pathname.includes("addRecipe.html")) {
       alert("An error occurred while adding recipe");
     }
   });
-}
-// Load recipes on dashboard
-if (window.location.pathname.includes("dashboard.html")) {
-  loadRecipes();
-  // add filter listener for filtering by category
-  const filterDropdown = document.getElementById("categoryFilter");
-  if (filterDropdown) {
-    filterDropdown.addEventListener("change", function () {
-      loadRecipes(); // just reload when filter changes
-    });
-  }
 }

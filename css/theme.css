@@ -62,9 +62,10 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea,
+select,
 .search {
-  background: var(--input-bg);
-  color: var(--text-primary);
+  background: #ffffff !important;
+  color: #000000 !important;
   border-color: var(--border-color);
 }
 
@@ -72,8 +73,10 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
 textarea:focus,
+select:focus,
 .search:focus {
-  background: var(--bg-secondary);
+  background: #ffffff !important;
+  color: #000000 !important;
 }
 
 input::placeholder,

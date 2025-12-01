@@ -1,19 +1,27 @@
 <!DOCTYPE html>
+<!-- setting langauge to engis -->
 <html lang="en">
   <head>
+    <!-- using utf-8 for encoding  -->
     <meta charset="UTF-8" />
+    <!--  for functionality on mobile dveices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title  -->
     <title>Recipe Vault - Add Recipe</title>
+    <!-- connecting js -->
     <script src="js/script.js" defer></script>
     <script>
+      // if statment
       if (!localStorage.getItem("user")) {
         window.location.href = "login.html";
       }
     </script>
+    <!-- getting icons from this page -->
     <script
       src="https://kit.fontawesome.com/c13af7bb57.js"
       crossorigin="anonymous"
     ></script>
+    <!-- linking css and js files -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/addRecipe.css" />
     <link rel="stylesheet" type="text/css" href="css/theme.css" />
@@ -21,63 +29,89 @@
     <script src="js/recipe.js" defer></script>
   </head>
   <body>
+    <!-- making multiple containers for nav bar  -->
     <div class="sidebar">
       <div class="top">
         <div class="logo">
+          <!--getting logo  -->
           <i class="fa-solid fa-user"></i>
+          <!-- some text -->
           <span class="title">Recipe Vault</span>
         </div>
+        <!-- getttinv icon from frontawesome  -->
         <i class="fa-solid fa-bars" id="menubtn"></i>
       </div>
+      <!-- user info sectiosn  -->
       <div class="user">
+        <!-- getting image from this sourcw -->
         <img src="images/user.png" alt="user" class="user-img" />
         <div>
+          <!--lable for username  -->
           <p class="bold">Username</p>
           <p>Admin</p>
         </div>
       </div>
+      <!--lable for username  -->
       <ul>
         <li>
+          <!--lable for username  -->
           <a href="myProfile.html">
+            <!-- icon  -->
             <i class="fa-solid fa-user"></i>
+            <!-- profile link text -->
             <span class="nav-item">Profile</span>
           </a>
+          <!-- this is a tooltip taht apperas when someone hoevers -->
           <span class="tooltip">Profile</span>
         </li>
       </ul>
+      <!--unordered lsit  -->
       <ul>
         <li>
+                    <!--link to dahsbard.html  -->
+
           <a href="dashboard.html">
+            <!-- icon  -->
             <i class="fa-solid fa-bookmark"></i>
             <span class="nav-item">Recipes</span>
           </a>
+          <!--tootlip taht apperas on hovr  -->
           <span class="tooltip">Recipes</span>
         </li>
       </ul>
       <ul>
         <li>
+          <!--link to add recipe page  -->
           <a href="addRecipe.html">
+            <!--icon  -->
             <i class="fa-regular fa-square-plus"></i>
             <span class="nav-item">Add Recipe</span>
           </a>
+          <!--tooltip taht appears on hover  -->
           <span class="tooltip">Add Recipe</span>
         </li>
       </ul>
       <ul>
         <li>
+          <!--for ht epurpose of loggin out  -->
           <a href="#" onclick="logout();return false;">
+            <!--this i a icon  -->
             <i class="fa-solid fa-right-from-bracket"></i>
+            <!--text for logout  -->
             <span class="nav-item">Logout</span>
           </a>
+          <!--tooltip taht appears on hover  -->
           <span class="tooltip">Logout</span>
         </li>
       </ul>
     </div>
-
+<!--main content of the pgae  -->
     <div class="main-content">
+      <!--clases  -->
       <div class="add-recipe-container">
+        <!-- heading -->
         <h1>Add New Recipe</h1>
-
+  <!-- card style container is being created of hte form -->
         <div class="recipe-form-card">
           <form id="addRecipeForm" action="" method="post">
             <input
@@ -87,6 +121,7 @@
               placeholder="Recipe Title"
               required
             />
+            <!--various categories that cna be used for recipte category sucha s breakfast lucng  -->
             <select id="Recipe_category" name="Recipe_category" required>
               <option value="">Select a category...</option>
               <option value="breakfast">Breakfast</option>
@@ -107,6 +142,7 @@
                   title="Bold (Ctrl+B)"
                 >
                   <i class="fa-solid fa-bold"></i>
+                <!--button  -->
                 </button>
                 <button
                   type="button"
@@ -126,7 +162,7 @@
 Instructions, ingredients, cooking time, etc."
               ></div>
             </div>
-
+<!--submit button type  -->
             <input
               type="submit"
               title="Ask AI for a recipe"
@@ -139,6 +175,7 @@ Instructions, ingredients, cooking time, etc."
       </div>
     </div>
     <script>
+      //  for the purpose f loggin out
       function logout() {
         localStorage.removeItem("user");
         window.location.href = "login.html";
@@ -146,3 +183,4 @@ Instructions, ingredients, cooking time, etc."
     </script>
   </body>
 </html>
+

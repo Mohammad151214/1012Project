@@ -1,88 +1,129 @@
 <!DOCTYPE html>
+<!-- setting language english -->
 <html lang="en">
   <head>
+    <!-- using charset properties for page setup -->
     <meta charset="UTF-8" />
+    <!-- to make pages eesponsve on  other kinds of devices such as mobile phoes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--page titiel  -->
     <title>Recipe Vault - My Recipes</title>
+    <!--if stamtent  -->
     <script>
       if (!localStorage.getItem("user")) {
         window.location.href = "login.html";
       }
     </script>
+    <!-- Loads Font Awesome icon library from CDN   -->
     <script
-      src="https://kit.fontawesome.com/c13af7bb57.js"
+      src="https://kit.fontawesome.com/c13af7bb57.js"  
       crossorigin="anonymous"
     ></script>
+    <!--linking various files such as text.css and script.js etc etc  -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/theme.css" />
     <script src="js/script.js" defer></script>
     <script src="js/recipe.js" defer></script>
     <script type="module" src="js/register.js" defer></script>
+    <!--the line below helps ;ead jsPDF library to help gnerate pdfs  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   </head>
   <body>
+    <!--cntaner for nav bar  -->
     <div class="sidebar">
+      <!--top of nav bar  -->
       <div class="top">
+        <!--conatiner for logo  -->
         <div class="logo">
+          <!-- getting user icon from a webiste called fontawesome that we linked earlier -->
           <i class="fa-solid fa-user"></i>
+          <!--some text  -->
           <span class="title">Recipe Vault</span>
         </div>
+        <!--another icon  -->
         <i class="fa-solid fa-bars" id="menubtn"></i>
       </div>
+      <!-- user info secion -->
       <div class="user">
+        <!-- user profile image -->
         <img src="images/user.png" alt="user" class="user-img" />
         <div>
+          <!--this ia a lable for the username  -->
           <p class="bold">Username</p>
+          <!-- this line displays the role of the user  -->
           <p>Admin</p>
+          <!--closing conatienrs and sectiosn  -->
         </div>
       </div>
+      <!-- unoredred list -->
       <ul>
         <li>
+          <!--link to profile page  -->
           <a href="myProfile.html">
+            <!--user icon  -->
             <i class="fa-solid fa-user"></i>
+            <!--this is the profile link text  -->
             <span class="nav-item">Profile</span>
           </a>
+          <!--tooltip to apper on hover  -->
           <span class="tooltip">Profile</span>
         </li>
       </ul>
       <ul>
         <li>
+          <!--linking to dashbaord  -->
           <a href="dashboard.html">
+            <!--icon  -->
             <i class="fa-solid fa-bookmark"></i>
+            <!--recipe link text  -->
             <span class="nav-item">Recipes</span>
           </a>
+          <!--tooltip  -->
           <span class="tooltip">Recipes</span>
         </li>
       </ul>
       <ul>
         <li>
+          <!--link to add recipe page  -->
           <a href="addRecipe.html">
+            <!--icon  -->
             <i class="fa-regular fa-square-plus"></i>
+            <!--some text  -->
             <span class="nav-item">Add Recipe</span>
           </a>
+          <!-- tooltip that apperas when we hover -->
           <span class="tooltip">Add Recipe</span>
         </li>
       </ul>
       <ul>
         <li>
+          <!-- this basiaclaly helpes logout  -->
           <a href="#" onclick="logout();return false;">
+            <!--icon  -->
             <i class="fa-solid fa-right-from-bracket"></i>
+            <!--txt that eppars  -->
             <span class="nav-item">Logout</span>
           </a>
+          <!--tooltip that eppaers  -->
           <span class="tooltip">Logout</span>
         </li>
       </ul>
     </div>
+    <!--main contnet of the apage  -->
     <div class="main-content">
       <div class="container">
+        <!--headng  -->
         <h1>My Recipes</h1>
+        <!--top nav bar  -->
         <div class="topnav">
+          <!--place hlder text, css class for styling and unique id is bing used jere  -->
           <input
             type="text"
             class="search"
             id="searchbox"
             placeholder="Search recipes..."
           />
+          <!-- unique id is being assigned and we added some inline css ssince we did not want to creat aonther file jsuf for this -->
           <select
             id="categoryFilter"
             style="
@@ -94,6 +135,7 @@
               background-color: white;
             "
           >
+            <!--drop down menus that shows up  -->
             <option value="all">All Categories</option>
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
@@ -108,15 +150,22 @@
       </div>
 
       <!-- Recipes will load here dynamically -->
+      <!-- conatiner for displaying a recipe -->
       <div class="recipe-card">
+        <!--placeholder for recipe iamge  -->
         <div class="recipe-img"></div>
+        <!--cotainer for recipe info  -->
         <div class="recipe-info">
+          <!-- text taht preexists -->
           <h3>No recipes yet</h3>
+          <!-- again text that preexists -->
           <p>Add your first recipe to get started!</p>
         </div>
       </div>
     </div>
     <script>
+      // this is some js script taht we added for logout funcionality since doing this was more
+      // efficent as opposed to making a new file
       function logout() {
         localStorage.removeItem("user");
         window.location.href = "login.html";
@@ -124,3 +173,4 @@
     </script>
   </body>
 </html>
+

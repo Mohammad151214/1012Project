@@ -1,19 +1,27 @@
 <!DOCTYPE html>
+<!--setting language = english  -->
 <html lang="en">
   <head>
+    <!-- using utf-8 encoding  -->
     <meta charset="UTF-8" />
+    <!-- making the page responsive for mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--titke  -->
     <title>Recipe Vault - Edit Recipe</title>
+    <!--linking js  -->
     <script src="js/script.js" defer></script>
+    <!--if staemnt  -->
     <script>
       if (!localStorage.getItem("user")) {
         window.location.href = "login.html";
       }
     </script>
+    <!-- Loads Font Awesome icon library from CDN  -->
     <script
       src="https://kit.fontawesome.com/c13af7bb57.js"
       crossorigin="anonymous"
     ></script>
+    <!--connecign css and js files  -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/addRecipe.css" />
     <link rel="stylesheet" type="text/css" href="css/theme.css" />
@@ -22,65 +30,98 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   </head>
   <body>
+    <!--container for side bar  -->
     <div class="sidebar">
+      <!-- top section of teh sidebar -->
       <div class="top">
+        <!-- continaer for logo  -->
         <div class="logo">
+          <!--gettig logo from the font aswesome webiste  -->
           <i class="fa-solid fa-user"></i>
+          <!--titile  -->
           <span class="title">Recipe Vault</span>
         </div>
+        <!--another logo  -->
         <i class="fa-solid fa-bars" id="menubtn"></i>
       </div>
+      <!--section for use info  -->
       <div class="user">
+        <!-- using iamge -->
         <img src="images/user.png" alt="user" class="user-img" />
         <div>
+          <!--lable for username  -->
           <p class="bold">Username</p>
           <p>Admin</p>
         </div>
       </div>
+      <!--unordered list  -->
       <ul>
+        <!--  list -->
         <li>
+          <!--link to profile apge  -->
           <a href="myProfile.html">
+            <!--icon  -->
             <i class="fa-solid fa-user"></i>
+            <!-- profile link text -->
             <span class="nav-item">Profile</span>
           </a>
+          <!-- this is a tooltip taht apperas when someone hoevers -->
           <span class="tooltip">Profile</span>
         </li>
+        <!--unordered list  -->
       </ul>
       <ul>
         <li>
+          <!--link to dahsbard.html  -->
           <a href="dashboard.html">
+            <!-- icom -->
             <i class="fa-solid fa-bookmark"></i>
+            <!--recipe link text  -->
             <span class="nav-item">Recipes</span>
           </a>
+          <!--tootlip taht apperas on hovr  -->
           <span class="tooltip">Recipes</span>
         </li>
+        <!--unorederd list  -->
       </ul>
       <ul>
         <li>
+<!-- link to add recipe page  -->
           <a href="addRecipe.html">
+            <!--icon  -->
             <i class="fa-regular fa-square-plus"></i>
+            
             <span class="nav-item">Add Recipe</span>
           </a>
+          <!--tooltip taht appears on hover  -->
           <span class="tooltip">Add Recipe</span>
         </li>
       </ul>
       <ul>
         <li>
+          <!--for the purpose of loggin out  -->
           <a href="#" onclick="logout();return false;">
+            <!--icon  -->
             <i class="fa-solid fa-right-from-bracket"></i>
+            <!--text for logout  -->
             <span class="nav-item">Logout</span>
           </a>
+          <!--tooltip taht appears on hover  -->
           <span class="tooltip">Logout</span>
         </li>
       </ul>
     </div>
-
+<!--main content of the pgae  -->
     <div class="main-content">
+      <!--class  -->
       <div class="add-recipe-container">
+        <!--headinf  -->
         <h1>Edit Recipe</h1>
-
+    <!-- card style container is being created or hte form -->
         <div class="recipe-form-card">
+          <!-- id of the form -->
           <form id="addRecipeForm" action="" method="post">
+            <!--text input filed along with palceholder text and name attribute as wella s id  -->
             <input
               type="text"
               id="Recipe_title"
@@ -88,6 +129,7 @@
               placeholder="Recipe Title"
               required
             />
+            <!--varius categories  -->
             <select id="Recipe_category" name="Recipe_category" required>
               <option value="">Select a category...</option>
               <option value="breakfast">Breakfast</option>
@@ -99,9 +141,10 @@
               <option value="vegetarian">Vegetarian</option>
               <option value="other">Other</option>
             </select>
-            <!-- Add the rich text editor here too (same as addRecipe.html) -->
+            <!-- Add ingthe rich text editor here as well -->
             <div id="editor-container">
               <div id="editor-toolbar">
+                <!-- burtton  -->
                 <button
                   type="button"
                   class="format-btn"
@@ -109,6 +152,7 @@
                   title="Bold (Ctrl+B)"
                 >
                   <i class="fa-solid fa-bold"></i>
+                  <!--button  -->
                 </button>
                 <button
                   type="button"
@@ -129,7 +173,7 @@ Instructions, ingredients, cooking time, etc."
               ></div>
             </div>
 
-            <!-- Buttons -->
+            <!-- some inclice css -->
             <div style="display: flex; gap: 10px; margin-top: 20px">
               <input type="submit" value="Save Recipe" style="flex: 1" />
               <button
@@ -154,6 +198,7 @@ Instructions, ingredients, cooking time, etc."
       </div>
     </div>
     <script>
+      // for logout functionality uses inline js
       function logout() {
         localStorage.removeItem("user");
         window.location.href = "login.html";
@@ -161,3 +206,4 @@ Instructions, ingredients, cooking time, etc."
     </script>
   </body>
 </html>
+

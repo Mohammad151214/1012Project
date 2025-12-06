@@ -82,5 +82,61 @@
     "category": "lunch",
     "userId": 4,
     "createdAt": "2025-12-01T01:53:47.714Z"
+  },
+  {
+    "id": 12,
+    "title": "Simple Puri",
+    "content": "Ingredients:<br>- Whole wheat flour<br>- Water<br>- Cooking oil<br><br>Instructions:<br>1. In a bowl, mix flour with enough water to form a firm, smooth dough.<br>2. Divide the dough into small balls and roll each into a thin, round disc.<br>3. Heat cooking oil in a deep pan and fry each puri until it puffs up and turns golden on both sides.",
+    "category": "snack",
+    "userId": 4,
+    "createdAt": "2025-12-01T02:02:07.745Z"
+  },
+  {
+    "id": 13,
+    "title": "Feta Psiti me Domates",
+    "content": "Ingredients:<br>- 2 large eggs<br>- 1 slice American cheese<br>- 1/2 tablespoon butter<br>- 1 pinch salt and pepper<br><br>Instructions:<br>1. Whisk eggs with a pinch of salt and pepper in a small bowl.<br>2. Melt butter in a non-stick skillet over medium heat.<br>3. Pour eggs into the hot skillet and cook, stirring gently, until mostly set.<br>4. Fold in the American cheese slice until just melted, then serve immediately.",
+    "category": "breakfast",
+    "userId": 6,
+    "createdAt": "2025-12-01T03:32:48.476Z"
+  },
+  {
+    "id": 14,
+    "title": "Quesadillas Sencillas",
+    "content": "Ingredients:<br>- 500g raw shrimp, peeled and deveined<br>- 6 cloves garlic, thinly sliced<br>- 1/2 cup olive oil<br>- 1 small dried red chili, crumbled (optional)<br>- Salt to taste<br>- Fresh parsley, chopped (for garnish)<br><br>Instructions:<br>1. Heat the olive oil in a small skillet or cazuela over medium-high heat.<br>2. Add the sliced garlic and the crumbled red chili (if using) to the hot oil. Sauté for about 1-2 minutes until the garlic is fragrant and lightly golden, being careful not to burn it.<br>3. Add the shrimp to the skillet and season with salt. Cook for 2-3 minutes, stirring occasionally, until the shrimp turn pink and opaque.<br>4. Remove from heat, sprinkle with fresh parsley, and serve immediately.",
+    "category": "lunch",
+    "userId": 6,
+    "createdAt": "2025-12-01T03:35:22.137Z"
+  },
+  {
+    "id": 15,
+    "title": "Spicy Plantain & Bean Skillet",
+    "content": "Ingredients:<br>- 2 slices bread<br>- 2 tablespoons creamy peanut butter<br>- 1/2 banana, sliced<br><br>Instructions:<br>1. Toast the bread to your desired crispness.<br>2. Spread peanut butter evenly over each slice of warm toast.<br>3. Arrange banana slices on top of the peanut butter toast.",
+    "category": "breakfast",
+    "userId": 6,
+    "createdAt": "2025-12-01T03:35:38.192Z"
+  },
+  {
+    "id": 16,
+    "title": "Garlic Green Bean Stir-fry",
+    "content": "Ingredients:<br>- 2 patatas medianas<br>- 3 huevos grandes<br>- Aceite de oliva<br><br>Instructions:<br>1. Pela y corta las patatas en rodajas finas o dados pequeños. Fríelas en abundante aceite de oliva a fuego medio hasta que estén blandas y ligeramente doradas.<br>2. En un bol, bate los huevos y sazona con sal. Escurre bien las patatas del aceite y añádelas al huevo batido, mezclando suavemente.<br>3. Calienta una sartén antiadherente con un chorrito de aceite. Vierte la mezcla y cocina a fuego medio-bajo, volteando la tortilla hasta que esté dorada por ambos lados y cuajada a tu gusto.",
+    "category": "vegan",
+    "userId": 6,
+    "createdAt": "2025-12-01T03:35:54.171Z"
+  },
+  {
+    "id": 17,
+    "title": "Simple Yellow Dal Tadka",
+    "content": "Ingredients:<br>- 200g sliced chicken breast<br>- 1 cup fresh green beans, trimmed and halved<br>- 2 tablespoons Prik King curry paste<br><br>Instructions:<br>1. Heat a little oil in a wok over medium-high heat, add chicken and stir-fry until almost cooked.<br>2. Add Prik King curry paste and stir continuously for 1-2 minutes until fragrant and coating the chicken.<br>3. Add green beans and a splash of water, stir-fry until beans are tender-crisp and chicken is fully cooked.",
+    "category": "dinner",
+    "userId": 6,
+    "createdAt": "2025-12-01T03:36:12.375Z"
+  },
+  {
+    "id": 18,
+    "title": "Pad Pak Ruam Gai (Chicken and Mixed Vegetable Stir-fry)",
+    "content": "Ingredients:<br>- 200g chicken breast, sliced<br>- 1 cup mixed vegetables (e.g., broccoli florets, sliced carrots)<br>- 1 tbsp soy sauce<br>- 2 cloves garlic, minced<br>- 1 tbsp vegetable oil<br><br>Instructions:<br>1. Heat oil in a wok or large pan over medium-high heat. Add minced garlic and stir-fry until fragrant, about 30 seconds.<br>2. Add sliced chicken to the pan and stir-fry until cooked through and no longer pink.<br>3. Add mixed vegetables and soy sauce, then continue to stir-fry for 2-3 minutes until vegetables are tender-crisp. Serve hot.",
+    "category": "breakfast",
+    "userId": 6,
+    "createdAt": "2025-12-01T03:36:29.415Z"
   }
 ]

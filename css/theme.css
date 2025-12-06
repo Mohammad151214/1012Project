@@ -64,8 +64,8 @@ input[type="password"],
 textarea,
 select,
 .search {
-  background: #ffffff !important;
-  color: #000000 !important;
+  background: var(--input-bg) !important;
+  color: var(--text-primary) !important;
   border-color: var(--border-color);
 }
 
@@ -75,8 +75,8 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus,
 .search:focus {
-  background: #ffffff !important;
-  color: #000000 !important;
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
 }
 
 input::placeholder,

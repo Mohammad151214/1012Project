@@ -97,17 +97,15 @@
     "content": "Ingredients:<br>- 2 large eggs<br>- 1 slice American cheese<br>- 1/2 tablespoon butter<br>- 1 pinch salt and pepper<br><br>Instructions:<br>1. Whisk eggs with a pinch of salt and pepper in a small bowl.<br>2. Melt butter in a non-stick skillet over medium heat.<br>3. Pour eggs into the hot skillet and cook, stirring gently, until mostly set.<br>4. Fold in the American cheese slice until just melted, then serve immediately.",
     "category": "breakfast",
     "userId": 6,
-    "createdAt": "2025-12-01T03:32:48.476Z",
-    "updatedAt": "2025-12-01T06:15:32.600Z"
+    "createdAt": "2025-12-01T03:32:48.476Z"
   },
   {
     "id": 14,
     "title": "Quesadillas Sencillas",
-    "content": "In<b>gredients:</b><br><ul><li>- 500g raw shrimp, peeled and deveined</li><li>- 6 cloves garlic, thinly sliced</li><li>- 1/2 cup olive oil</li><li>- 1 small dried red chili, crumbled (optional)</li><li>- Salt to taste</li><li>- Fresh parsley, chopped (for garnish)</li></ul><br>Instructions:<br>1. Heat the olive oil in a small skillet or cazuela over medium-high heat.<br>2. Add the sliced garlic and the crumbled red chili (if using) to the hot oil. Sauté for about 1-2 minutes until the garlic is fragrant and lightly golden, being careful not to burn it.<br>3. Add the shrimp to the skillet and season with salt. Cook for 2-3 minutes, stirring occasionally, until the shrimp turn pink and opaque.<br>4. Remove from heat, sprinkle with fresh parsley, and serve immediately.",
+    "content": "Ingredients:<br>- 500g raw shrimp, peeled and deveined<br>- 6 cloves garlic, thinly sliced<br>- 1/2 cup olive oil<br>- 1 small dried red chili, crumbled (optional)<br>- Salt to taste<br>- Fresh parsley, chopped (for garnish)<br><br>Instructions:<br>1. Heat the olive oil in a small skillet or cazuela over medium-high heat.<br>2. Add the sliced garlic and the crumbled red chili (if using) to the hot oil. Sauté for about 1-2 minutes until the garlic is fragrant and lightly golden, being careful not to burn it.<br>3. Add the shrimp to the skillet and season with salt. Cook for 2-3 minutes, stirring occasionally, until the shrimp turn pink and opaque.<br>4. Remove from heat, sprinkle with fresh parsley, and serve immediately.",
     "category": "lunch",
     "userId": 6,
-    "createdAt": "2025-12-01T03:35:22.137Z",
-    "updatedAt": "2025-12-01T06:19:32.018Z"
+    "createdAt": "2025-12-01T03:35:22.137Z"
   },
   {
     "id": 15,
@@ -140,21 +138,5 @@
     "category": "breakfast",
     "userId": 6,
     "createdAt": "2025-12-01T03:36:29.415Z"
-  },
-  {
-    "id": 19,
-    "title": "Feta Sto Fourno",
-    "content": "Ingredients:<br>- Feta cheese (200g)<br>- Greek yogurt (2 tbsp)<br>- Red chili flakes (1/2 tsp)<br><br>Instructions:<br>1. Crumble feta cheese into a bowl.<br>2. Add Greek yogurt and red chili flakes.<br>3. Mash with a fork until mostly smooth.",
-    "category": "breakfast",
-    "userId": 6,
-    "createdAt": "2025-12-01T06:15:27.733Z"
-  },
-  {
-    "id": 20,
-    "title": "Patta Gobhi Sabzi",
-    "content": "Ingredients:<br>- 1 small head cabbage, finely chopped<br>- 1 medium onion, thinly sliced<br>- 1-2 green chilies, slit (adjust to taste)<br>- 2 tbsp cooking oil<br>- 1/2 tsp mustard seeds<br>- 1/4 tsp turmeric powder<br>- Salt to taste<br><br>Instructions:<br>1. Heat oil in a large pan over medium heat. Add mustard seeds and let them splutter, then add sliced onion and green chilies. Sauté until the onion turns translucent.<br>2. Add the chopped cabbage, turmeric powder, and salt. Mix everything well to combine.<br>3. Cover the pan and cook on low-medium heat for 10-15 minutes, or until the cabbage is tender, stirring occasionally. Serve hot.",
-    "category": "breakfast",
-    "userId": 6,
-    "createdAt": "2025-12-01T06:19:11.558Z"
   }
 ]
